@@ -238,6 +238,41 @@
 @media(max-width:420px){.favorite-photo{height:165px}.favorite-info{display:block}.favorite-add{margin-top:12px;width:100%;justify-content:center}.header-cta{padding:10px 8px;gap:5px;letter-spacing:.07em}.cart-header-btn{font-size:8px}.brand-word{font-size:30px}.intro-ritual-copy h3{font-size:65px}}
 @media(prefers-reduced-motion:reduce){.sequence-arrow{animation:none}.favorite-photo img{transition:none}}
 
+
+/* Tight final layout: one introduction, interactive dish previews */
+.hero-points{display:grid;gap:10px;max-width:510px;padding:0;margin:0;list-style:none}
+.hero-points li{font-size:clamp(14px,1.15vw,17px);line-height:1.55;color:#f0dfcc;padding-left:20px;position:relative;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+.hero-points li:before{content:"";position:absolute;left:0;top:12px;width:8px;height:1px;background:var(--gold)}
+.intro.intro-unified{display:block;padding:clamp(78px,9vw,135px) clamp(24px,8vw,160px)}
+.intro-unified .intro-ritual{margin:0;grid-template-columns:minmax(0,.93fr) minmax(0,1.1fr);gap:clamp(35px,7vw,110px);align-items:center}
+.intro-unified .intro-ritual-image{height:clamp(390px,42vw,630px)}
+.intro-unified-title{font-size:clamp(54px,5.9vw,96px);line-height:.95;color:var(--ink);letter-spacing:-.045em;max-width:750px;margin:24px 0 22px}
+.intro-unified-title em{color:#9b4b3e}
+.intro-unified-line{font:italic clamp(18px,1.6vw,24px)/1.3 var(--serif);color:#8b5944;margin:0 0 31px}
+.intro-unified .ritual-list li{padding:13px 0}
+.intro-unified .ritual-closing{margin-top:20px}
+.intro-journey-link{display:inline-flex;gap:15px;align-items:center;color:#853d30;text-transform:uppercase;font-size:11px;font-weight:700;letter-spacing:.14em;margin-top:27px;text-decoration:underline;text-underline-offset:7px}
+.intro-journey-link:hover{color:#b2694c}
+.menu-item-preview{border:0;background:transparent;display:block;text-align:left;padding:0;margin:0;color:var(--ink);min-width:0;cursor:pointer}
+.menu-item-preview .menu-item-title{transition:color .18s}
+.menu-item-preview:hover .menu-item-title,.menu-item.is-previewed .menu-item-title,.menu-item-preview:focus-visible .menu-item-title{color:#a1543f}
+.menu-item.is-previewed{box-shadow:inset 0 -2px 0 rgba(153,87,58,.42)}
+.menu-item .preview-price{cursor:pointer}
+.menu-item .preview-price:hover{color:#6c3328}
+.menu-photo img{transition:opacity .22s ease;will-change:opacity}
+.menu-photo figcaption small{display:block;font-size:11px;letter-spacing:0;line-height:1.5;margin-top:9px;color:#e3caa8;font-family:var(--sans)}
+.menu-photo figcaption .menu-photo-footnote{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#e5d0b4;opacity:.85;margin-top:13px}
+.review-layout{transition:opacity .18s ease}
+.review-layout.is-switching{opacity:.65}
+@media(max-width:760px){
+  .intro.intro-unified{padding:68px 24px 85px}
+  .intro-unified .intro-ritual{grid-template-columns:1fr;gap:35px}
+  .intro-unified .intro-ritual-image{height:360px}
+  .intro-unified-title{font-size:clamp(57px,11vw,75px)}
+  .intro-unified-line{font-size:20px}
+  .hero-points li{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){.menu-photo img,.review-layout{transition:none}}
 </style>
 </head>
 <body>
@@ -251,21 +286,30 @@
 <main id="top">
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-media"><img src="https://images.unsplash.com/photo-1759893497816-129ce94f1b40?auto=format&fit=crop&w=2000&q=83" alt="Warm red lanterns hanging by the entrance of a traditional Chinese restaurant" fetchpriority="high"></div>
-  <div class="hero-copy"><p class="kicker">Wok-fired cooking · Food made for sharing</p><h1 class="hero-title" id="hero-title">Come hungry.<br>Leave <em>happy.</em></h1><p class="hero-description">The hiss of the wok. The comfort of a shared table. Come for your favourites, and stay for another story.</p><div class="hero-actions"><a class="button-primary" href="#experience">Step inside <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16 16 4M5 4h11v11"/></svg></a><a href="#menu" class="button-text">Explore the menu <span aria-hidden="true">↗</span></a></div></div>
+  <div class="hero-copy"><p class="kicker">Wok-fired cooking · Food made for sharing</p><h1 class="hero-title" id="hero-title">Come hungry.<br>Leave <em>happy.</em></h1><ul class="hero-points" aria-label="The Wok Hei experience"><li>The hiss of the wok. Food fired with flavour.</li><li>Your favourite people. One table worth sharing.</li></ul><div class="hero-actions"><a class="button-primary" href="#experience">Step inside <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16 16 4M5 4h11v11"/></svg></a><a href="#menu" class="button-text">Explore the menu <span aria-hidden="true">↗</span></a></div></div>
   <span class="hero-vertical">A little fire. A lot to share.</span><div class="hero-bottom"><span>01 / Welcome to Wok Hei</span><span>Scroll to enter</span><span class="down-arrow" aria-hidden="true"></span></div>
 </section>
-<section class="intro" id="experience" aria-labelledby="intro-heading">
-<div class="intro-top">
- <div class="intro-left"><p class="kicker reveal">The Wok Hei way</p><h2 class="intro-head reveal" id="intro-heading">The heart of it <em>is sharing.</em></h2><p class="intro-lead reveal">From the fire of the wok to the middle of the table.</p></div>
- <div class="intro-right reveal"><p class="intro-small-title">AT WOK HEI</p><ul class="intro-points"><li>Wok-fired cooking, served fresh</li><li>Dumplings, noodles & dishes for sharing</li><li>Good company. No need to rush.</li></ul></div>
-</div>
-<div class="intro-sequence reveal" aria-label="Four stages of the experience"><p class="sequence-label">FOUR MOMENTS · FOLLOW THE EVENING</p><nav class="sequence-track" aria-label="Jump to a restaurant chapter">
-<a href="#journey" data-chapter="0"><b>01</b><span>ARRIVE</span></a><span class="sequence-arrow" aria-hidden="true">↗</span>
-<a href="#journey" data-chapter="1"><b>02</b><span>GATHER</span></a><span class="sequence-arrow" aria-hidden="true">↗</span>
-<a href="#journey" data-chapter="2"><b>03</b><span>WATCH</span></a><span class="sequence-arrow" aria-hidden="true">↗</span>
-<a href="#journey" data-chapter="3"><b>04</b><span>SHARE</span></a></nav></div>
-<div class="intro-ritual" id="stories"><figure class="intro-ritual-image reveal"><img src="https://images.pexels.com/photos/7364009/pexels-photo-7364009.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Chinese-inspired dining table with shared plates, tea and lanterns" loading="lazy"><figcaption>THE TABLE / WOK HEI</figcaption></figure>
-<div class="intro-ritual-copy reveal"><p class="kicker">More than dinner</p><h3 class="serif">A shared <em>ritual.</em></h3><ul class="ritual-list"><li><b>01</b> Come as you are.</li><li><b>02</b> Order for everyone.</li><li><b>03</b> Pass your favourites around.</li><li><b>04</b> Let the evening unfold.</li></ul><p class="ritual-closing">Small moments. One table. Plenty to share.</p></div></div>
+
+<section class="intro intro-unified" id="experience" aria-labelledby="intro-heading">
+  <div class="intro-ritual" id="stories">
+    <figure class="intro-ritual-image reveal">
+      <img src="https://images.pexels.com/photos/7364009/pexels-photo-7364009.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Chinese-inspired dining table with shared plates, tea and lanterns" loading="lazy">
+      <figcaption>THE TABLE / WOK HEI</figcaption>
+    </figure>
+    <div class="intro-ritual-copy reveal">
+      <p class="kicker">The Wok Hei way · More than dinner</p>
+      <h2 class="intro-unified-title serif" id="intro-heading">The heart of it <em>is sharing.</em></h2>
+      <p class="intro-unified-line">From the wok to the table. Good food brings us together.</p>
+      <ul class="ritual-list">
+        <li><b>01</b> Come as you are.</li>
+        <li><b>02</b> Order for everyone.</li>
+        <li><b>03</b> Pass your favourites around.</li>
+        <li><b>04</b> Let the evening unfold.</li>
+      </ul>
+      <p class="ritual-closing">Small moments. One table. Plenty to share.</p>
+      <a class="intro-journey-link" href="#journey">Explore the experience <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
 </section>
 <section class="journey" id="journey" aria-label="Scroll through the Wok Hei restaurant experience">
 <div class="stage" id="journey-stage">
@@ -277,7 +321,7 @@
 </div>
 </section>
 <div class="marquee" aria-hidden="true"><span>Good food, good company</span><i>✶</i><span>Good food, good company</span><i>✶</i><span>Good food, good company</span><i>✶</i></div>
-<section class="menu" id="menu" aria-labelledby="menu-heading"><div class="section-shell"><p class="kicker reveal">The good stuff</p><div class="menu-top reveal"><h2 class="section-heading serif" id="menu-heading">A menu made<br>to <em>share.</em></h2><p class="section-lead">Beautifully simple ingredients. Familiar favourites. A few unexpected sparks.</p></div><div class="menu-tabs" role="tablist" aria-label="Menu categories" id="menu-tabs"><button class="menu-tab" role="tab" aria-selected="true" data-menu="Small plates">Small plates</button><button class="menu-tab" role="tab" aria-selected="false" data-menu="Noodles & rice">Noodles & rice</button><button class="menu-tab" role="tab" aria-selected="false" data-menu="From the wok">From the wok</button><button class="menu-tab" role="tab" aria-selected="false" data-menu="Tea & sweets">Tea & sweets</button></div><div class="menu-content"><div class="menu-items" id="menu-items" role="tabpanel" aria-live="polite"><div class="menu-item"><div><h3 class="menu-item-title">Soup dumplings</h3><p class="menu-item-desc">Pork, ginger, warming broth</p></div><span class="menu-item-price">$13</span></div><div class="menu-item"><div><h3 class="menu-item-title">Crispy scallion pancake</h3><p class="menu-item-desc">Flaky, golden, sesame dipping sauce</p></div><span class="menu-item-price">$8</span></div><div class="menu-item"><div><h3 class="menu-item-title">Smashed cucumber</h3><p class="menu-item-desc">Garlic, chilli oil, black vinegar</p></div><span class="menu-item-price">$6</span></div><div class="menu-item"><div><h3 class="menu-item-title">Pork & chive dumplings</h3><p class="menu-item-desc">Pan-fried, black vinegar</p></div><span class="menu-item-price">$9</span></div></div><figure class="menu-photo"><img id="menu-photo" src="https://images.pexels.com/photos/32393812/pexels-photo-32393812.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Soup dumplings" loading="lazy"><figcaption><span>FROM THIS SECTION</span><strong id="menu-photo-title">Soup dumplings</strong></figcaption></figure></div><p class="menu-footnote">Menu items and prices are examples for this design concept and can be updated for the restaurant.</p></div></section>
+<section class="menu" id="menu" aria-labelledby="menu-heading"><div class="section-shell"><p class="kicker reveal">The good stuff</p><div class="menu-top reveal"><h2 class="section-heading serif" id="menu-heading">A menu made<br>to <em>share.</em></h2><p class="section-lead">Beautifully simple ingredients. Familiar favourites. A few unexpected sparks.</p></div><div class="menu-tabs" role="tablist" aria-label="Menu categories" id="menu-tabs"><button class="menu-tab" role="tab" aria-selected="true" data-menu="Small plates">Small plates</button><button class="menu-tab" role="tab" aria-selected="false" data-menu="Noodles & rice">Noodles & rice</button><button class="menu-tab" role="tab" aria-selected="false" data-menu="From the wok">From the wok</button><button class="menu-tab" role="tab" aria-selected="false" data-menu="Tea & sweets">Tea & sweets</button></div><div class="menu-content"><div class="menu-items" id="menu-items" role="tabpanel" aria-live="polite"><div class="menu-item"><div><h3 class="menu-item-title">Soup dumplings</h3><p class="menu-item-desc">Pork, ginger, warming broth</p></div><span class="menu-item-price">$13</span></div><div class="menu-item"><div><h3 class="menu-item-title">Crispy scallion pancake</h3><p class="menu-item-desc">Flaky, golden, sesame dipping sauce</p></div><span class="menu-item-price">$8</span></div><div class="menu-item"><div><h3 class="menu-item-title">Smashed cucumber</h3><p class="menu-item-desc">Garlic, chilli oil, black vinegar</p></div><span class="menu-item-price">$6</span></div><div class="menu-item"><div><h3 class="menu-item-title">Pork & chive dumplings</h3><p class="menu-item-desc">Pan-fried, black vinegar</p></div><span class="menu-item-price">$9</span></div></div><figure class="menu-photo"><img id="menu-photo" src="https://images.pexels.com/photos/32393812/pexels-photo-32393812.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Illustrative photograph for Soup dumplings" loading="lazy"><figcaption><span>FROM THIS SECTION</span><strong id="menu-photo-title">Soup dumplings</strong><small id="menu-photo-subtitle">Pork, ginger, warming broth</small><small class="menu-photo-footnote">Illustrative food photography</small></figcaption></figure></div><p class="menu-footnote">Menu items and prices are examples for this design concept and can be updated for the restaurant.</p></div></section>
 <section class="gallery" id="gallery" aria-labelledby="gallery-heading"><div class="section-shell">
 <p class="kicker reveal">Fresh from the kitchen</p><div class="gallery-top reveal"><h2 class="section-heading serif" id="gallery-heading">Our <em>favourites.</em><span class="gallery-subtitle">A feast for the senses.</span></h2><div class="gallery-aside"><span class="favorites-label">FOUR HOUSE FAVOURITES</span><p class="gallery-lead">A small taste of the menu. Add a favourite, or discover the rest.</p></div></div>
 <div class="favorites-grid">
@@ -312,7 +356,46 @@ const menu={
  'Noodles & rice':[['Hand-pulled noodles','Scallion, black vinegar',16],['Dan dan noodles','Sesame, ground pork, chilli crisp',15],['Beef chow fun','Wide rice noodle, bean sprouts',17],['Yangzhou fried rice','Prawns, egg, char siu',14]],
  'From the wok':[['Kung pao chicken','Peanuts, dried chilli',19],['Salt & pepper prawns','Fried garlic, chilli',24],['Mapo tofu','Silken tofu, Sichuan pepper',16],['Wok-charred greens','Garlic, savoury glaze',12]],
  'Tea & sweets':[['Jasmine tea','Fragrant green tea',6],['Mango pudding','Fresh mango, cream',9],['Sesame balls','Crisp shell, sweet sesame',8],['Oolong tea','Slowly steeped',7]]};
-const menuItems=$('#menu-items'),tabs=$$('.menu-tab');function renderMenu(key){menuItems.replaceChildren(...menu[key].map(([name,desc,price])=>{const row=document.createElement('div');row.className='menu-item';const text=document.createElement('div');const h=document.createElement('h3');h.className='menu-item-title';h.textContent=name;const p=document.createElement('p');p.className='menu-item-desc';p.textContent=desc;text.append(h,p);const amount=document.createElement('span');amount.className='menu-item-price';amount.textContent='$'+price;const plus=document.createElement('button');plus.type='button';plus.className='menu-add';plus.dataset.add=name;plus.dataset.price=String(price);plus.setAttribute('aria-label','Add '+name+' to bag');plus.textContent='+';row.append(text,amount,plus);return row}));tabs.forEach(t=>t.setAttribute('aria-selected',String(t.dataset.menu===key)));const picks={'Small plates':['https://images.pexels.com/photos/32393812/pexels-photo-32393812.jpeg?auto=compress&cs=tinysrgb&w=1100','Soup dumplings'],'Noodles & rice':['https://images.pexels.com/photos/3727197/pexels-photo-3727197.jpeg?auto=compress&cs=tinysrgb&w=1100','Noodles & rice'],'From the wok':['https://images.pexels.com/photos/7616731/pexels-photo-7616731.jpeg?auto=compress&cs=tinysrgb&w=1100','Fresh from the wok'],'Tea & sweets':['https://images.pexels.com/photos/4390022/pexels-photo-4390022.jpeg?auto=compress&cs=tinysrgb&w=1100','Jasmine tea']};$('#menu-photo').src=picks[key][0];$('#menu-photo').alt=picks[key][1];$('#menu-photo-title').textContent=picks[key][1]}tabs.forEach(t=>t.addEventListener('click',()=>renderMenu(t.dataset.menu)));renderMenu('Small plates');
+const menuPhotos={"Soup dumplings": "https://images.pexels.com/photos/32393812/pexels-photo-32393812.jpeg?auto=compress&cs=tinysrgb&w=1100", "Crispy scallion pancake": "https://images.pexels.com/photos/24349885/pexels-photo-24349885.jpeg?auto=compress&cs=tinysrgb&w=1100", "Smashed cucumber": "https://images.pexels.com/photos/12077975/pexels-photo-12077975.jpeg?auto=compress&cs=tinysrgb&w=1100", "Pork & chive dumplings": "https://images.pexels.com/photos/7353382/pexels-photo-7353382.jpeg?auto=compress&cs=tinysrgb&w=1100", "Hand-pulled noodles": "https://images.pexels.com/photos/30676160/pexels-photo-30676160.jpeg?auto=compress&cs=tinysrgb&w=1100", "Dan dan noodles": "https://images.pexels.com/photos/6488937/pexels-photo-6488937.jpeg?auto=compress&cs=tinysrgb&w=1100", "Beef chow fun": "https://images.pexels.com/photos/5848498/pexels-photo-5848498.jpeg?auto=compress&cs=tinysrgb&w=1100", "Yangzhou fried rice": "https://images.pexels.com/photos/5720819/pexels-photo-5720819.jpeg?auto=compress&cs=tinysrgb&w=1100", "Kung pao chicken": "https://images.pexels.com/photos/30708204/pexels-photo-30708204.jpeg?auto=compress&cs=tinysrgb&w=1100", "Salt & pepper prawns": "https://images.pexels.com/photos/7616731/pexels-photo-7616731.jpeg?auto=compress&cs=tinysrgb&w=1100", "Mapo tofu": "https://images.pexels.com/photos/34618075/pexels-photo-34618075.jpeg?auto=compress&cs=tinysrgb&w=1100", "Wok-charred greens": "https://images.pexels.com/photos/36108993/pexels-photo-36108993.jpeg?auto=compress&cs=tinysrgb&w=1100", "Jasmine tea": "https://images.pexels.com/photos/4390022/pexels-photo-4390022.jpeg?auto=compress&cs=tinysrgb&w=1100", "Mango pudding": "https://images.pexels.com/photos/12669167/pexels-photo-12669167.jpeg?auto=compress&cs=tinysrgb&w=1100", "Sesame balls": "https://images.pexels.com/photos/6645915/pexels-photo-6645915.jpeg?auto=compress&cs=tinysrgb&w=1100", "Oolong tea": "https://images.pexels.com/photos/6351839/pexels-photo-6351839.jpeg?auto=compress&cs=tinysrgb&w=1100"};
+const menuItems=$('#menu-items'),tabs=$$('.menu-tab'),previewImage=$('#menu-photo'),previewTitle=$('#menu-photo-title'),previewSubtitle=$('#menu-photo-subtitle');
+let previewRequestId=0;
+function showDish(name,desc){
+ const url=menuPhotos[name];if(!url)return;
+ const requestId=++previewRequestId;
+ const match=[...menuItems.children].find(row=>row.dataset.dish===name);
+ previewTitle.textContent=name;
+ previewSubtitle.textContent=desc;
+ menuItems.querySelectorAll('.menu-item').forEach(row=>{
+  const selected=row===match;row.classList.toggle('is-previewed',selected);
+  const btn=row.querySelector('.menu-item-preview');if(btn)btn.setAttribute('aria-pressed',String(selected));
+ });
+ // Remove the old dish immediately; reveal only the newly requested photograph.
+ previewImage.style.opacity='0';
+ previewImage.alt='Illustrative food photograph for '+name;
+ previewImage.onload=()=>{if(requestId===previewRequestId)previewImage.style.opacity='1'};
+ previewImage.onerror=()=>{if(requestId===previewRequestId){previewImage.style.opacity='0';previewImage.removeAttribute('src')}};
+ previewImage.src=url;
+ if(previewImage.complete&&previewImage.naturalWidth)previewImage.style.opacity='1';
+}
+function renderMenu(key){
+ const entries=menu[key];
+ menuItems.replaceChildren(...entries.map(([name,desc,price])=>{
+  const row=document.createElement('div');row.className='menu-item';row.dataset.dish=name;
+  const look=document.createElement('button');look.type='button';look.className='menu-item-preview';look.setAttribute('aria-label','View photo of '+name);look.setAttribute('aria-pressed','false');
+  const h=document.createElement('h3');h.className='menu-item-title';h.textContent=name;
+  const caption=document.createElement('p');caption.className='menu-item-desc';caption.textContent=desc;
+  look.append(h,caption);look.addEventListener('click',()=>showDish(name,desc));
+  const amount=document.createElement('span');amount.className='menu-item-price';amount.textContent='$'+price;
+  amount.addEventListener('click',()=>showDish(name,desc));amount.classList.add('preview-price');
+  const plus=document.createElement('button');plus.type='button';plus.className='menu-add';plus.dataset.add=name;plus.dataset.price=String(price);plus.setAttribute('aria-label','Add '+name+' to bag');plus.textContent='+';
+  row.append(look,amount,plus);return row;
+ }));
+ tabs.forEach(t=>t.setAttribute('aria-selected',String(t.dataset.menu===key)));
+ entries.forEach(([name])=>{const warm=new Image();warm.src=menuPhotos[name]});
+ showDish(entries[0][0],entries[0][1]);
+}
+tabs.forEach(t=>t.addEventListener('click',()=>renderMenu(t.dataset.menu)));renderMenu('Small plates');
+
 const reviews=[
 {name:'Mei · Sample guest story',quote:'The first basket of dumplings disappeared before anything else arrived. There is always room for one more.',img:'https://images.pexels.com/photos/6314651/pexels-photo-6314651.jpeg?auto=compress&cs=tinysrgb&w=850'},
 {name:'Daniel · Sample guest story',quote:'One of those evenings when the food keeps coming and nobody remembers to check the time.',img:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=850&q=82'},
@@ -320,7 +403,33 @@ const reviews=[
 {name:'Arthur · Sample guest story',quote:'I came for a quiet dinner and stayed for the conversation. The tea and dumplings made it a lovely evening.',img:'https://images.pexels.com/photos/3782217/pexels-photo-3782217.jpeg?auto=compress&cs=tinysrgb&w=850'},
 {name:'Sofia · Sample guest story',quote:'Everyone chose a different plate and we shared the lot. That is my kind of dinner.',img:'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=850'},
 {name:'Lin · Sample guest story',quote:'A little chilli, a lot of laughter, and one last cup of jasmine tea before heading home.',img:'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=850'}
-];let ri=0;function showReview(next){ri=(next+reviews.length)%reviews.length;const r=reviews[ri];$('#review-quote').textContent=r.quote;$('#review-name').textContent=r.name;$('#review-photo').loading='eager';$('#review-photo').src=r.img;$('#review-count').textContent=String(ri+1).padStart(2,'0')+' / 06';$('#review-count-bottom').textContent=String(ri+1).padStart(2,'0')+' / 06'}$('#prev-review').addEventListener('click',()=>showReview(ri-1));$('#next-review').addEventListener('click',()=>showReview(ri+1));
+];let ri=0,reviewRequest=0;
+const reviewPhoto=$('#review-photo'),reviewBlock=$('.review-layout');
+function showReview(next){
+ const target=(next+reviews.length)%reviews.length;
+ ri=target;const token=++reviewRequest,r=reviews[target];
+ reviewBlock.classList.add('is-switching');
+ reviewBlock.setAttribute('aria-busy','true');
+ const commit=ok=>{
+   if(token!==reviewRequest)return;
+   if(ok){reviewPhoto.src=r.img;reviewPhoto.alt='Illustrative portrait for '+r.name;reviewPhoto.style.visibility='visible'}
+   else{reviewPhoto.removeAttribute('src');reviewPhoto.style.visibility='hidden'}
+   $('#review-quote').textContent=r.quote;
+   $('#review-name').textContent=r.name;
+   const num=String(target+1).padStart(2,'0')+' / '+String(reviews.length).padStart(2,'0');
+   $('#review-count').textContent=num;$('#review-count-bottom').textContent=num;
+   reviewBlock.classList.remove('is-switching');
+   reviewBlock.setAttribute('aria-busy','false');
+ };
+ const pic=new Image();
+ pic.onload=()=>commit(true);
+ pic.onerror=()=>commit(false);
+ pic.src=r.img;
+}
+$('#prev-review').addEventListener('click',()=>showReview(ri-1));
+$('#next-review').addEventListener('click',()=>showReview(ri+1));
+showReview(0);
+
 const toggle=$('#mobile-toggle'),mobile=$('#mobile-menu');function closeMenu(){mobile.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation')}toggle.addEventListener('click',()=>{const open=mobile.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation')});mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 const date=$('#reservation-date');const now=new Date(),local=new Date(now.getTime()-now.getTimezoneOffset()*60000);date.min=local.toISOString().slice(0,16);
 const RESERVATION_EMAIL='';// Configure with a real restaurant email only after approval.
@@ -376,10 +485,7 @@ $('#checkout-back').addEventListener('click',()=>{checkoutView.hidden=true;cartV
 $('#place-order').addEventListener('click',()=>{$('#order-closed').hidden=false;$('#place-order').disabled=true;$('#order-closed').scrollIntoView({behavior:reduce?'instant':'smooth',block:'nearest'})});
 $('#back-to-shopping').addEventListener('click',()=>{closeBag();$('#menu').scrollIntoView({behavior:reduce?'instant':'smooth'})});
 dialog.addEventListener('close',()=>{$('#place-order').disabled=false});
-$$('.sequence-track [data-chapter]').forEach(link=>link.addEventListener('click',e=>{
- e.preventDefault();const n=Number(link.dataset.chapter),range=Math.max(1,journey.offsetHeight-innerHeight);
- window.scrollTo({top:journey.offsetTop+((n+.4)/scenes.length)*range,behavior:reduce?'instant':'smooth'});
-}));
+
 renderBag();
 
 })();
