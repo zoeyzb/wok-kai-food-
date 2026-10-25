@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Wok Hei Kitchen – Chinese food, cooked on fire</title>
+<title>Wok Hei Kitchen — Fire, craft & the art of sharing</title><meta name="description" content="A cinematic Chinese restaurant experience, from lantern-lit streets to the fire of the wok."><meta name="theme-color" content="#110e0e">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
@@ -72,34 +72,117 @@ button.go{font:500 1rem "DM Sans",sans-serif;padding:1rem;border:0;border-radius
 #ok{min-height:1.5em;color:#7dffd0;text-align:center}.info{display:grid;gap:.2rem;margin-top:1rem;opacity:.85}
 @media(prefers-reduced-motion:reduce){figure.t{transition:none}html{scroll-behavior:auto}}
 </style>
+
+<style id="premium-upgrade">
+:root{--bg:#100c0c;--ink:#f5eee3;--gold:#d2ad76;--red:#7b292a;--panel:rgba(15,10,11,.95)}
+body{background:#100c0c;letter-spacing:.005em}
+#gl{filter:saturate(.72) brightness(.84) contrast(1.09)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at center,transparent 36%,rgba(8,5,5,.3) 100%)}
+nav{padding:1.1rem clamp(1.2rem,4vw,5rem);min-height:78px;transition:background .3s,box-shadow .3s}
+nav.scrolled{background:rgba(15,11,12,.94);backdrop-filter:blur(20px);box-shadow:0 1px rgba(230,200,158,.12)}
+nav .logo{font-size:1.8rem;letter-spacing:-.055em}.logo-star{color:var(--gold)}
+nav .l{gap:2.3rem}nav .l a{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+nav .r{align-items:center;gap:1rem}
+nav .r .btn.hot{background:#85312e;border-color:#a65a4f;padding:.72rem 1.2rem;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase}
+.sound-toggle{width:42px;height:42px;display:grid;place-items:center;background:rgba(13,11,12,.5);color:#ecd9c1;border:1px solid rgba(235,213,177,.5);border-radius:50%;cursor:pointer}
+.sound-toggle:hover,.sound-toggle[aria-pressed=true]{background:#6b2b29;border-color:var(--gold)}
+section{padding:14vh clamp(1.1rem,6vw,7rem);isolation:isolate}
+#hero{min-height:100svh;padding-bottom:clamp(6rem,12vh,11rem);background:linear-gradient(90deg,rgba(7,5,7,.77),rgba(7,5,7,.26) 70%,transparent),linear-gradient(0deg,rgba(7,5,7,.56),transparent 62%)}
+#hero .blk{max-width:800px;opacity:1;text-shadow:0 4px 35px #000,0 2px 5px #000}
+#hero h1{font-size:clamp(3.3rem,7.7vw,8rem);line-height:.96;letter-spacing:-.043em;text-wrap:balance}
+#hero h1 em,.gallery-title em,#reserve h2 em{font-weight:400;color:#e8cba3}
+.eyebrow,.section-kicker{display:flex;align-items:center;gap:.9rem;font:600 .69rem/1.4 "DM Sans",sans-serif;letter-spacing:.25em;color:#e6c9a2;text-transform:uppercase;margin-bottom:1.2rem}
+.eyebrow i{display:inline-block;width:28px;height:1px;background:currentColor}
+#hero .sub{font-size:clamp(1rem,1.5vw,1.18rem);line-height:1.8;max-width:45ch;margin-top:1.5rem;opacity:1}
+#hero .facts{font-size:.65rem;letter-spacing:.14em;margin-top:2.2rem;text-transform:uppercase}
+#hero .btn{padding:1rem 1.5rem;letter-spacing:.07em;font-size:.78rem;text-transform:uppercase}
+#hero .btn.hot{background:#85312e}
+.hint{font-size:.95rem;color:#f8e7d1;letter-spacing:.05em}
+.act{min-height:112svh}.act .blk{width:min(100%,37rem);padding:2.2rem 2.5rem;background:linear-gradient(100deg,rgba(10,8,9,.86),rgba(10,8,9,.37));border-left:1px solid rgba(230,186,132,.68);box-shadow:0 12px 60px rgba(0,0,0,.14)}
+.act.R .blk{background:linear-gradient(270deg,rgba(10,8,9,.85),rgba(10,8,9,.34));border-left:0;border-right:1px solid rgba(230,186,132,.68)}
+.act .blk h2{font-size:clamp(2.9rem,5.2vw,5.5rem);letter-spacing:-.035em;line-height:1.02}
+.act .blk .sub{font-size:1rem;line-height:1.85;opacity:.98}.cap{font-size:1.2rem}
+.tags span{font-size:.75rem;background:rgba(20,13,12,.8)}
+.panel{border:1px solid rgba(209,177,134,.27);background:rgba(15,10,11,.95);box-shadow:0 24px 80px rgba(0,0,0,.2);backdrop-filter:blur(12px)}
+#menu .panel{max-width:70rem;padding:clamp(1.7rem,5vw,4rem)}
+#menu h2{font-size:clamp(3rem,6.3vw,6.3rem)}
+[role=tablist]{justify-content:flex-start;overflow:auto;flex-wrap:nowrap;gap:clamp(1.1rem,3vw,3rem)}[role=tab]{white-space:nowrap;font-size:.82rem}
+.mi{padding:1.15rem 0}.mi b{font-size:1.4rem}
+#gallery .panel{max-width:78rem;padding:clamp(1.5rem,4vw,3.5rem);text-align:left}
+#gallery .gallery-title{font-size:clamp(3.7rem,7.4vw,7.4rem);letter-spacing:-.05em;line-height:.97}
+.section-deck{margin-top:1rem;color:#d7c6b1;line-height:1.8}
+#gallery .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:2.4rem}
+figure.t.photo-card{aspect-ratio:4/5;padding:0;border:1px solid rgba(225,191,147,.24);background:#221512;overflow:hidden;position:relative;transition:transform .5s,border-color .25s}
+figure.t.photo-card:hover{transform:translateY(-5px)!important;border-color:var(--gold)}
+.photo-card img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.84) contrast(1.05) brightness(.83);transition:transform .7s,filter .7s}
+.photo-card:hover img{transform:scale(1.05);filter:saturate(.97) brightness(.96)}
+.photo-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,7,7,.3),transparent 40%,rgba(9,5,5,.9));pointer-events:none}
+.photo-index{position:absolute;top:1.15rem;left:1.2rem;font-size:.66rem;letter-spacing:.18em;color:#fff0d9}
+.photo-copy{position:absolute;bottom:0;left:0;right:0;padding:1.45rem}
+.photo-card .zh{display:inline-block;font-family:"Ma Shan Zheng",serif;font-size:2.3rem!important;margin-bottom:.2rem;line-height:1;opacity:.7}
+.photo-card b{font:400 clamp(1.45rem,2.2vw,2rem)/1.06 "Instrument Serif",serif;margin-bottom:.4rem;color:#fff4e7}
+.photo-card small{font-size:.79rem;line-height:1.4;color:#f0ded0;opacity:.95}
+#reviews .rvw{max-width:74rem}#reviews h2{font-size:clamp(3.2rem,6vw,6rem)}
+#reviews .section-kicker{justify-content:center}
+#reviews .slide{background:rgba(13,9,10,.96);box-shadow:0 20px 70px rgba(0,0,0,.24)}
+#reviews .ph img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.8) contrast(1.08);object-position:center top}
+#reviews blockquote p{font-size:clamp(1.7rem,3vw,3rem);line-height:1.2}
+#reserve .panel{padding:clamp(1.6rem,5vw,3.5rem)!important;max-width:43rem!important}
+#reserve h2{font-size:clamp(3.3rem,6.6vw,5.7rem);line-height:.99;letter-spacing:-.04em}
+#reserve .section-kicker{justify-content:center}
+.reserve-deck{opacity:.85;margin-top:1rem}
+#reserve .info{font-size:.83rem;margin:1.6rem auto;color:#d1beab}
+#reserve .info small{opacity:.65}
+.call-card{display:flex;align-items:center;gap:1.2rem;text-align:left;border:1px solid rgba(207,173,127,.36);padding:1.15rem 1.3rem;background:rgba(150,102,66,.08)}
+.call-card>span{font-size:2rem;color:var(--gold)}
+.call-card strong{font-size:.9rem;font-weight:500}
+.call-card p{font:400 1.65rem "Instrument Serif",serif;line-height:1.25;color:var(--gold)}
+.call-card small{color:#d0baa3}
+#reserve form{max-width:none;margin-top:1.8rem;grid-template-columns:1fr 1fr}
+#reserve form label{font-size:.8rem;letter-spacing:.03em}
+#reserve form label:nth-child(3),#reserve form button,#reserve form #ok,#reserve form .form-disclosure{grid-column:1/-1}
+#reserve input,#reserve select{border-radius:0;background:rgba(255,255,255,.045);border-color:rgba(245,225,195,.28);min-width:0}
+#reserve .go{background:#85312e;border:1px solid #b56856;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.3rem;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}
+.form-disclosure{font-size:.77rem;color:#c4b09a;line-height:1.5;text-align:center}
+.no-webgl #gl{background:radial-gradient(ellipse at 60% 24%,#65352b,#150f13 68%);opacity:1}
+@media(max-width:760px){nav{min-height:65px;padding:.8rem 1rem}nav .logo{font-size:1.5rem}nav .r .btn.hot{padding:.7rem .8rem;font-size:.67rem}.sound-toggle{width:36px;height:36px}
+.act{min-height:100svh}.act .blk,.act.R .blk{padding:1.5rem;background:rgba(9,7,9,.74);border-left:1px solid rgba(230,186,132,.68);border-right:0}
+.act .blk h2{font-size:clamp(2.9rem,9.8vw,4.4rem)}
+#gallery .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.photo-copy{padding:1rem}.photo-card b{font-size:1.55rem}.photo-card .zh{font-size:2rem!important}.photo-card small{font-size:.71rem}
+#hero{padding-bottom:12vh;background:linear-gradient(90deg,rgba(7,5,7,.83),rgba(7,5,7,.26))}
+#hero h1{font-size:clamp(3.25rem,13vw,5.5rem)}#hero .facts{font-size:.6rem}.facts span{padding-right:.8rem;margin-right:.7rem}}
+@media(max-width:420px){#reserve form{grid-template-columns:1fr}.photo-card .zh{display:none}.photo-card b{font-size:1.35rem}.photo-card small{font-size:.7rem}#reviews .slide{display:flex;flex-direction:column}#reviews .ph{aspect-ratio:4/3}}
+@media(prefers-reduced-motion:reduce){.act .blk,#hero .blk{opacity:1!important;transform:none!important}.photo-card img{transition:none}}
+</style>
 </head>
 <body>
-<nav><a class="logo" href="#">Wok Hei</a><span class="l"><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#reserve">Visit</a></span>
-<span class="r"><button class="btn" id="snd" aria-pressed="false">Sound off</button><a class="btn hot" href="#reserve">Reserve</a></span></nav>
+<nav id="site-nav"><a class="logo" href="#hero">Wok Hei<span class="logo-star">.</span></a><span class="l"><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#reserve">Visit</a></span>
+<span class="r"><button id="snd" class="sound-toggle" type="button" aria-label="Enable ambient sound" title="Toggle ambient sound" aria-pressed="false"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="m16 9 5 6m0-6-5 6"/></svg></button><a class="btn hot" href="#reserve">Reserve a table</a></span></nav>
 <canvas id="gl" aria-hidden="true"></canvas>
 <div class="hint" id="hint">Scroll to walk in</div>
 <main>
-<section id="hero"><div class="blk" id="tag"><h1 class="s">Fire, steel and a very hot wok.</h1>
-<p class="sub">Hand-pulled noodles, soup dumplings and wok-tossed classics on Lantern Lane since 2009.</p>
+<section id="hero"><div class="blk" id="tag"><span class="eyebrow">WOK HEI <i></i> FIRE-LED CHINESE COOKING</span><h1 class="s">Where fire<br>becomes <em>flavour.</em></h1>
+<p class="sub">A seat by the fire. A table full of stories. Noodles pulled by hand, dumplings folded with care, and everything made to share.</p>
 <div class="btns"><a class="btn hot" href="#reserve">Reserve a table</a><a class="btn" href="#menu">See the menu</a></div>
-<div class="facts"><span>4.8 from 1,240 Google reviews</span><span>Open until 10 pm</span><span>Takeout and delivery</span></div></div></section>
-<section class="act L"><div class="blk" data-z="io"><p class="cap">Out front</p><h2 class="s">Push open the doors.</h2><p class="sub">Rain on the street, lanterns overhead and the smell of hot sesame oil pulling you in.</p></div></section>
-<section class="act R"><div class="blk" data-z="io"><p class="cap">Inside</p><h2 class="s">Pull up a seat.</h2><p class="sub">Round tables made for sharing, lacquered wood and a room that’s loud in the best way.</p></div></section>
-<section class="act L"><div class="blk" data-z="io"><p class="cap">At the fire</p><h2 class="s">Watch it cooked.</h2><p class="sub">Every order hits the wok within a minute. Toss, flip, sear. That’s the wok hei you came for.</p></div></section>
-<section class="act R"><div class="blk" data-z="io"><p class="cap">At your table</p><h2 class="s">Dinner is served.</h2><p class="sub">Give the table a spin. Everything arrives hot, and everything is made to share.</p>
+<div class="facts"><span>01 / THE EXPERIENCE</span><span>CRAFTED OVER FIRE</span><span>SCROLL TO STEP INSIDE ↓</span></div></div></section>
+<section class="act L"><div class="blk" data-z="io"><p class="cap">Out front</p><h2 class="s">Follow the lantern light.</h2><p class="sub">Beyond the rain-soaked street, something warm is waiting. Follow the glow, and step inside.</p></div></section>
+<section class="act R"><div class="blk" data-z="io"><p class="cap">Inside</p><h2 class="s">Every seat has a story.</h2><p class="sub">Soft lantern light, dark lacquered wood, and the gentle hum of a room made for coming together.</p></div></section>
+<section class="act L"><div class="blk" data-z="io"><p class="cap">At the fire</p><h2 class="s">The theatre of the wok.</h2><p class="sub">Steel meets flame. Ingredients lift into the air, then return to the heat. This is cooking you can feel.</p></div></section>
+<section class="act R"><div class="blk" data-z="io"><p class="cap">At your table</p><h2 class="s">Made for the middle.</h2><p class="sub">One more plate. Another story. Let the table turn and pass your favourites around.</p>
 <div class="tags"><span>Hand-pulled noodles $16</span><span>Soup dumplings $13</span><span>Kung pao chicken $19</span></div></div></section>
 <section id="menu"><div class="blk wrap panel" data-z="in"><h2 class="s">The menu</h2><div role="tablist" aria-label="Menu categories" id="tabs"></div><div id="items" role="tabpanel"></div></div></section>
-<section id="gallery"><div class="blk wrap panel" data-z="in"><h2 class="s">From the kitchen</h2><div class="grid" id="tiles"></div><p class="note">Placeholder tiles. Your own food photos drop in here.</p></div></section>
-<section id="reviews"><div class="blk rvw" data-z="in"><h2 class="s">What our guests say</h2><p class="rate">4.8 on Google from 1,240 reviews</p>
+<section id="gallery"><div class="blk wrap panel" data-z="in"><p class="section-kicker">A CLOSER LOOK</p><h2 class="s gallery-title">From the <em>kitchen.</em></h2><p class="section-deck">Craft, colour, and a little bit of fire — plated for the table.</p><div class="grid" id="tiles"></div><p class="note">Editorial photography for this portfolio concept; actual restaurant dishes and plating may vary.</p></div></section>
+<section id="reviews"><div class="blk rvw" data-z="in"><p class="section-kicker">AROUND THE TABLE</p><h2 class="s">Stories worth sharing.</h2><p class="rate">A preview of the guest stories this experience could showcase</p>
 <div class="slide" aria-live="polite"><div class="ph fx" id="ph"></div>
 <div class="meta"><span class="ct" id="ct"></span><h3 class="s fx" id="nm"></h3><p class="fx" id="rl"></p><div class="sv"><small>Ordered</small><p class="fx" id="od"></p></div>
 <div class="arr"><button id="pv" aria-label="Previous review">←</button><button id="nx" class="on" aria-label="Next review">→</button></div></div>
 <blockquote><span class="q" aria-hidden="true">“</span><p class="fx" id="qt"></p></blockquote></div>
-<p class="note">Sample reviews and portraits for the demo.</p></div></section>
-<section id="reserve"><div class="blk wrap panel" data-z="in" style="max-width:38rem"><h2 class="s">Save your seat</h2>
-<div class="info"><p>88 Lantern Lane</p><p>Tuesday to Sunday, 11:30 am to 10 pm</p><p>Takeout until 10:30 pm</p></div>
-<form id="f"><label>Name<input name="n" required autocomplete="name"></label><label>Guests<select name="g"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
-<label>Date and time<input type="datetime-local" name="t" required></label><button class="go" type="submit">Reserve a table</button><p id="ok" role="status"></p></form></div></section>
+<p class="note">Concept demonstration: illustrative testimonials and editorial portraits, not verified customer endorsements.</p></div></section>
+<section id="reserve"><div class="blk wrap panel" data-z="in" style="max-width:38rem"><p class="section-kicker">COME AS YOU ARE</p><h2 class="s">There’s a seat <em>for you.</em></h2><p class="reserve-deck">Bring your favourite people. We’ll set the scene.</p>
+<div class="info"><p>Tuesday–Sunday · 11:30 AM–10:00 PM <small>(sample hours)</small></p></div><div class="call-card"><span aria-hidden="true">✦</span><div><strong>Prefer to speak with us?</strong><p>Give us a call</p><small>Phone number to be added</small></div></div>
+<form id="f"><label>Your name<input name="n" required autocomplete="name" placeholder="Name"></label><label>Guests<select name="g"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
+<label>Preferred date and time<input type="datetime-local" name="t" required></label><button class="go" type="submit">Request a table <span aria-hidden="true">↗</span></button><p id="ok" role="status" aria-live="polite"></p><p class="form-disclosure">Portfolio preview only — this form does not submit or hold a reservation.</p></form></div></section>
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
