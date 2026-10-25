@@ -321,6 +321,11 @@
 
 @media(min-width:601px){.calendar-popover.open-above{top:auto;bottom:calc(100% + 9px)}}
 @media(max-width:600px){.calendar-popover{position:fixed;top:auto;bottom:15px;left:15px!important;right:15px!important;width:auto;max-height:calc(100dvh - 100px);overflow-y:auto;z-index:150;box-shadow:0 0 0 200vmax rgba(8,6,5,.6),0 18px 55px rgba(0,0,0,.55)}}
+
+/* Reservation photo quote: sit ABOVE the dark image overlay for legible luxury contrast. */
+.reserve-image .reserve-quote{position:absolute;z-index:3;color:#fff8eb;text-shadow:0 3px 24px rgba(0,0,0,.82),0 1px 3px rgba(0,0,0,.9);opacity:1;filter:none}
+.reserve-image .reserve-quote em{color:#f1c88f;text-shadow:0 3px 24px rgba(0,0,0,.8),0 1px 3px rgba(0,0,0,.92)}
+.reserve-image:after{z-index:1;pointer-events:none}
 </style>
 </head>
 <body>
