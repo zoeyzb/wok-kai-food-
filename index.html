@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Wok Hei Kitchen — Fire, craft & the art of sharing</title><meta name="description" content="A cinematic Chinese restaurant experience, from lantern-lit streets to the fire of the wok."><meta name="theme-color" content="#110e0e">
+<title>Wok Hei Kitchen — Fire, craft & the art of sharing</title><meta name="description" content="A cinematic Chinese restaurant experience, from lantern-lit streets to the fire of the wok."><meta name="theme-color" content="#110e0e"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%23160c0b%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2246%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%22%20font-size%3D%2247%22%20fill%3D%22%23e6c49a%22%3EW%3C%2Ftext%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
@@ -154,6 +154,7 @@ figure.t.photo-card:hover{transform:translateY(-5px)!important;border-color:var(
 #hero h1{font-size:clamp(3.25rem,13vw,5.5rem)}#hero .facts{font-size:.6rem}.facts span{padding-right:.8rem;margin-right:.7rem}}
 @media(max-width:420px){#reserve form{grid-template-columns:1fr}.photo-card .zh{display:none}.photo-card b{font-size:1.35rem}.photo-card small{font-size:.7rem}#reviews .slide{display:flex;flex-direction:column}#reviews .ph{aspect-ratio:4/3}}
 @media(prefers-reduced-motion:reduce){.act .blk,#hero .blk{opacity:1!important;transform:none!important}.photo-card img{transition:none}}
+@media(max-width:540px){#gallery .grid{grid-template-columns:1fr!important;gap:1rem}figure.t.photo-card{aspect-ratio:5/4}.photo-card .zh{display:inline-block!important;font-size:2rem!important}.photo-card b{font:400 1.95rem/1.04 "Instrument Serif",Georgia,serif!important}.photo-card small{font-size:.84rem!important}.photo-copy{padding:1.4rem}.photo-index{font-size:.67rem}}
 </style>
 </head>
 <body>
@@ -324,7 +325,7 @@ var Lshop=new THREE.PointLight(0xf9c39b,1.7,30);Lshop.position.set(0,0,3);S.add(
 var Lroom=new THREE.PointLight(0xffb070,1,34);S.add(Lroom);
 var Lfire=new THREE.PointLight(0xe28b45,1.8,22);Lfire.position.set(-7.5,1,-43);S.add(Lfire);
 var spots=[];function spot(x,y,z,tx,ty,tz,col,i,a){var l=new THREE.SpotLight(col,i,60,a,.6,1);l.position.set(x,y,z);l.target.position.set(tx,ty,tz);S.add(l,l.target);l.castShadow=true;l.shadow.mapSize.set(1024,1024);l.shadow.bias=-.0006;l.shadow.normalBias=.05;spots.push(l);return l}
-spot(0,5,-22,0,-3,-22,0xffc890,2,.95);spot(-3,5,-40,-7.5,-1,-44,0xffe0c0,2.4,.55);var Ltab=spot(0,6,-58,0,-1.3,-62,0xffd2a0,3.2,.6);
+spot(0,5,-22,0,-3,-22,0xffc890,1.45,.95);spot(-3,5,-40,-7.5,-1,-44,0xffd6b1,1.55,.55);var Ltab=spot(0,6,-58,0,-1.3,-62,0xffc49e,2.2,.6);
 
 /* lanterns */
 var lan=[],lanM=new THREE.MeshStandardMaterial({color:0xbd4b39,emissive:0xf88b5e,emissiveMap:ribT,map:ribT,emissiveIntensity:.74,roughness:.83,side:THREE.DoubleSide}),brass=mt(0xa18764,.36,.72);
@@ -356,8 +357,8 @@ var doors=[];
 [[-2,1.6],[2,-1.6]].forEach(function(d){var g=new THREE.Group(),sg=d[0]<0?1:-1;g.position.set(d[0],0,-3);bx(2,6,.25,mt(0x3a1a10,.4,.1),sg,0,0,g);bx(1.2,3,.05,mt(0xffd09a,.3,0,.9,0xffb060),sg,.5,.14,g);cy(.05,.05,1.2,brass,sg*1.7,-.4,.25,g);S.add(g);doors.push([g,d[1]])});
 
 /* dining room */
-var floor=mesh(new THREE.PlaneGeometry(28,69),mt(0xbab0a0,.59,.08,0,0,woodT),0,-3,-37.5);floor.rotation.x=-Math.PI/2;
-var lac=mt(0x512d29,.56,.08),wood=mt(0x9b7c66,.67,0,0,0,woodT),beam=mt(0x30231e,.65);
+var floor=mesh(new THREE.PlaneGeometry(28,69),mt(0x8d8075,.72,.045,0,0,woodT),0,-3,-37.5);floor.rotation.x=-Math.PI/2;
+var lac=mt(0x38211f,.66,.08),wood=mt(0x806653,.7,0,0,0,woodT),beam=mt(0x271d19,.73);
 bx(28,.5,69,dark,0,5.6,-37.5);[-1,1].forEach(function(s){bx(.5,9,69,lac,s*14,1.5,-37.5);bx(.3,3,69,wood,s*13.7,-1.5,-37.5);bx(.2,.15,69,brass,s*13.6,.1,-37.5)});
 bx(28,9,.5,lac,0,1.5,-72);for(var z=-6;z>-70;z-=6)bx(28,.5,.6,beam,0,5.2,z);
 [-1,1].forEach(function(s){for(var z=-12;z>-62;z-=12){var bk=new THREE.Mesh(new THREE.PlaneGeometry(6,5),mt(0xffb070,.5,0,.9,0xff9040));bk.position.set(s*13.6,1.2,z);bk.rotation.y=-s*Math.PI/2;S.add(bk);
@@ -386,9 +387,9 @@ lathe(wp,(function(){var m=mt(0x1c1c1e,.4,.9);m.side=THREE.DoubleSide;return m})
 var flT=ctex(64,128,function(x,w,h){var g=x.createRadialGradient(32,96,2,32,80,60);g.addColorStop(0,'rgba(255,240,170,1)');g.addColorStop(.4,'rgba(255,130,30,.7)');g.addColorStop(1,'rgba(255,60,0,0)');x.fillStyle=g;x.fillRect(0,0,w,h)});
 var flames=[],bits=[];
 for(var f=0;f<7;f++){var fs=new THREE.Sprite(new THREE.SpriteMaterial({map:flT,blending:THREE.AdditiveBlending,transparent:true,depthWrite:false,fog:false}));fs.position.set((Math.random()-.5)*4,-1.6,(Math.random()-.5)*4);fs.userData.p=Math.random()*6;wok.add(fs);flames.push(fs)}
-for(var q=0;q<14;q++){var bt=sph(.22,mt([0xb01818,0x3a8a2a,0xd8a030,0xf3e9da][q%4],.4),0,0,0,wok);bt.userData={p:Math.random()*6,x:(Math.random()-.5)*3,z:(Math.random()-.5)*3};bits.push(bt)}
+for(var q=0;q<14;q++){var g=q%3===0?new THREE.TetrahedronGeometry(.22):q%3===1?new THREE.IcosahedronGeometry(.2,0):new THREE.ConeGeometry(.13,.36,6);var bt=mesh(g,mt([0x993d2e,0x51743e,0xbaa16d,0xd5bd95][q%4],.77),0,0,0,wok,0);bt.rotation.set(Math.random()*3,Math.random()*3,Math.random()*3);bt.scale.set(1,.55+Math.random()*.55,.7+Math.random()*.4);bt.userData={p:Math.random()*6,x:(Math.random()-.5)*3,z:(Math.random()-.5)*3};bits.push(bt)}
 wok.scale.setScalar(.55);wok.position.set(-7.5,-.2,-44);wok.rotation.y=Math.PI/2;S.add(wok);steam(wok,1.2,8,1.2);
-var chef=new THREE.Group(),white=mt(0xf0ebe0,.7);cy(.7,.85,2.6,white,0,-1.7,0,chef);bx(1.2,1.5,.2,mt(0x2a2a30,.7),0,-1.4,.72,chef);sph(.5,mt(0xc99573,.6),0,.2,0,chef);cy(.55,.6,1.1,white,0,1,0,chef);sph(.78,white,0,1.7,0,chef);
+var chef=new THREE.Group(),white=mt(0xc1b6a6,.83);cy(.7,.85,2.6,white,0,-1.7,0,chef);bx(1.2,1.5,.2,mt(0x2a2a30,.7),0,-1.4,.72,chef);sph(.5,mt(0xc99573,.6),0,.2,0,chef);cy(.47,.52,.6,white,0,.88,0,chef);cy(.52,.56,.16,white,0,1.24,0,chef);
 var arm=new THREE.Group();arm.position.set(.85,-.4,.2);cy(.2,.17,1.8,white,0,0,.9,arm).rotation.x=Math.PI/2;chef.add(arm);chef.position.set(-7.5,0,-47.6);S.add(chef);
 
 /* served table */
@@ -455,13 +456,13 @@ function loop(){
   C.position.y+=((.5*wK+2.4*wT-my*1.2)-C.position.y)*.06;C.position.z=z+orb*2;
   def.set(C.position.x*.2,C.position.y*.3-.9*(1-inn),z-20);def.lerp(kt,wK*(1-wT)).lerp(tt3,wT);C.lookAt(def);
   S.background.lerpColors(cNight,cIn,inn);S.fog.color.copy(S.background);S.fog.density=.009-.002*inn;
-  Lroom.position.set(0,3,z-9);Lroom.intensity=.4+1.08*inn;Lshop.intensity=1.7*(1-inn)+.36;moon.intensity=.48*(1-inn)+.12;
+  Lroom.position.set(0,3,z-9);Lroom.intensity=.4+.72*inn;Lshop.intensity=1.7*(1-inn)+.36;moon.intensity=.48*(1-inn)+.12;
   var op=sm(4.5,-1,z);doors.forEach(function(d){d[0].rotation.y=d[1]*op});
   rain.visible=z>-2;var ra=rg.attributes.position.array;for(var i=0;i<RN;i++){var y=ra[i*6+1]-.5;if(y<-3)y=11;ra[i*6+1]=y;ra[i*6+4]=y-.7}rg.attributes.position.needsUpdate=true;
   lan.forEach(function(g){g.position.y=g.userData.y+Math.sin(tm+g.userData.p)*.1;g.rotation.y=tm*.3+g.userData.p});
   wok.rotation.z=Math.sin(tm*3)*.12;
   flames.forEach(function(f){var s=.7+Math.abs(Math.sin(tm*8+f.userData.p))*.6;f.scale.set(2.2*s,3.4*s,1);f.position.y=-1.1+s*.7;f.material.opacity=.85});
-  bits.forEach(function(b){var u=b.userData;b.position.set(u.x,.4+Math.abs(Math.sin(tm*2.4+u.p))*4.5,u.z)});
+  bits.forEach(function(b){var u=b.userData;b.position.set(u.x,.4+Math.abs(Math.sin(tm*2.4+u.p))*4.5,u.z);b.rotation.x+=dt*1.8;b.rotation.y+=dt*1.2});
   Lfire.intensity=1.7+Math.sin(tm*9)*.25+Math.sin(tm*13)*.2;
   chef.position.y=Math.abs(Math.sin(tm*2.4))*.1;chef.rotation.y=Math.sin(tm*1.2)*.12;arm.rotation.x=Math.sin(tm*3)*.18;
   ls.rotation.y=tm*.15;bw.rotation.y=tm*.5;Ltab.intensity=3+Math.sin(tm*3)*.1;
