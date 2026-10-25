@@ -76,7 +76,7 @@ button.go{font:500 1rem "DM Sans",sans-serif;padding:1rem;border:0;border-radius
 <style id="premium-upgrade">
 :root{--bg:#100c0c;--ink:#f5eee3;--gold:#d2ad76;--red:#7b292a;--panel:rgba(15,10,11,.95)}
 body{background:#100c0c;letter-spacing:.005em}
-#gl{filter:saturate(.72) brightness(.84) contrast(1.09)}
+#gl{filter:saturate(1.02) brightness(.99) contrast(1.1)}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at center,transparent 36%,rgba(8,5,5,.3) 100%)}
 nav{padding:1.1rem clamp(1.2rem,4vw,5rem);min-height:78px;transition:background .3s,box-shadow .3s}
 nav.scrolled{background:rgba(15,11,12,.94);backdrop-filter:blur(20px);box-shadow:0 1px rgba(230,200,158,.12)}
@@ -251,7 +251,7 @@ if(reduce){document.querySelectorAll('.act .blk,[data-z]').forEach(function(el){
 var supportsWebGL=!!window.THREE;try{if(supportsWebGL){var tc=document.createElement('canvas');supportsWebGL=!!(tc.getContext('webgl2')||tc.getContext('webgl'));}}catch(e){supportsWebGL=false}
 if(supportsWebGL){
 var R=new THREE.WebGLRenderer({canvas:$('gl'),antialias:true});
-R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=.88;
+R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.04;
 var PR=Math.min(devicePixelRatio,matchMedia('(pointer:coarse)').matches?1.25:1.5);R.setPixelRatio(PR);R.shadowMap.enabled=true;R.shadowMap.autoUpdate=false;R.shadowMap.type=THREE.PCFShadowMap;
 var S=new THREE.Scene(),cNight=new THREE.Color(0x11131b),cIn=new THREE.Color(0x18110f);
 S.background=new THREE.Color(0x11131b);S.fog=new THREE.FogExp2(0x11131b,.017);
@@ -318,7 +318,7 @@ var ribT=ctex(64,128,function(x,w,h){x.fillStyle='#d9a988';x.fillRect(0,0,w,h);f
 /* lights */
 S.add(new THREE.HemisphereLight(0x8590aa,0x32251b,.67));
 var moon=new THREE.DirectionalLight(0xb0bbd1,.58);moon.position.set(-10,20,10);S.add(moon);
-var Lshop=new THREE.PointLight(0xf9c39b,1.3,30);Lshop.position.set(0,0,3);S.add(Lshop);
+var Lshop=new THREE.PointLight(0xf9c39b,1.7,30);Lshop.position.set(0,0,3);S.add(Lshop);
 
 
 var Lroom=new THREE.PointLight(0xffb070,1,34);S.add(Lroom);
@@ -327,7 +327,7 @@ var spots=[];function spot(x,y,z,tx,ty,tz,col,i,a){var l=new THREE.SpotLight(col
 spot(0,5,-22,0,-3,-22,0xffc890,2,.95);spot(-3,5,-40,-7.5,-1,-44,0xffe0c0,2.4,.55);var Ltab=spot(0,6,-58,0,-1.3,-62,0xffd2a0,3.2,.6);
 
 /* lanterns */
-var lan=[],lanM=new THREE.MeshStandardMaterial({color:0xac4d3e,emissive:0xf39a65,emissiveMap:ribT,map:ribT,emissiveIntensity:.35,roughness:.85,side:THREE.DoubleSide}),brass=mt(0xa18764,.36,.72);
+var lan=[],lanM=new THREE.MeshStandardMaterial({color:0xbd4b39,emissive:0xf88b5e,emissiveMap:ribT,map:ribT,emissiveIntensity:.74,roughness:.83,side:THREE.DoubleSide}),brass=mt(0xa18764,.36,.72);
 function lantern(x,y,z,s,nog){var g=new THREE.Group();mesh(new THREE.LatheGeometry([[.3,-.85],[.62,-.6],[.78,-.2],[.8,0],[.78,.2],[.62,.6],[.3,.85]].map(function(a){return new THREE.Vector2(a[0],a[1])}),24),lanM,0,0,0,g,0);
   [.88,-.88].forEach(function(o){cy(.32,.32,.16,brass,0,o,0,g).castShadow=false});cy(.03,.03,.8,mt(0xb01830,.6),0,-1.3,0,g);if(!nog)glow(0,0,0,0xffad70,2.5,.14,g);
   g.position.set(x,y,z);g.scale.setScalar(s||1);g.userData={p:Math.random()*6,y:y};S.add(g);lan.push(g);return g}
@@ -454,8 +454,8 @@ function loop(){
   C.position.x+=((-2.6*wK+mx*2+Math.sin(tm*.25)*1.4*orb)-C.position.x)*.06;
   C.position.y+=((.5*wK+2.4*wT-my*1.2)-C.position.y)*.06;C.position.z=z+orb*2;
   def.set(C.position.x*.2,C.position.y*.3-.9*(1-inn),z-20);def.lerp(kt,wK*(1-wT)).lerp(tt3,wT);C.lookAt(def);
-  S.background.lerpColors(cNight,cIn,inn);S.fog.color.copy(S.background);S.fog.density=.02-.009*inn;
-  Lroom.position.set(0,3,z-9);Lroom.intensity=.35+.93*inn;Lshop.intensity=1.3*(1-inn)+.32;moon.intensity=.52*(1-inn)+.12;
+  S.background.lerpColors(cNight,cIn,inn);S.fog.color.copy(S.background);S.fog.density=.009-.002*inn;
+  Lroom.position.set(0,3,z-9);Lroom.intensity=.4+1.08*inn;Lshop.intensity=1.7*(1-inn)+.36;moon.intensity=.48*(1-inn)+.12;
   var op=sm(4.5,-1,z);doors.forEach(function(d){d[0].rotation.y=d[1]*op});
   rain.visible=z>-2;var ra=rg.attributes.position.array;for(var i=0;i<RN;i++){var y=ra[i*6+1]-.5;if(y<-3)y=11;ra[i*6+1]=y;ra[i*6+4]=y-.7}rg.attributes.position.needsUpdate=true;
   lan.forEach(function(g){g.position.y=g.userData.y+Math.sin(tm+g.userData.p)*.1;g.rotation.y=tm*.3+g.userData.p});
@@ -470,7 +470,7 @@ function loop(){
     sizG.gain.setTargetAtTime(Math.max(0,1-Math.abs(z-ZS[3])/16)*.15,A.currentTime,.2);whG.gain.setTargetAtTime(Math.min(spd*9,.2),A.currentTime,.1)}
   R.shadowMap.needsUpdate=(frm++%3===0)&&inn>.25;R.render(S,C);requestAnimationFrame(loop)}
 loop();
-}else{document.body.classList.add('no-webgl');hint.textContent='Scroll to explore';}
+}else{document.body.classList.add('no-webgl');hint.textContent='Scroll to explore';$('snd').disabled=true;$('snd').setAttribute('aria-label','Ambient sound unavailable in this browser');}
 $('f').addEventListener('submit',function(e){e.preventDefault();var f=e.target;$('ok').textContent='Thanks, '+f.n.value+'. This concept demo does not submit reservations. Please contact the restaurant when booking details are configured.'});
 })();
 </script>
