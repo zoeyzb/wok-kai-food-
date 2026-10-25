@@ -273,6 +273,54 @@
   .hero-points li{font-size:14px}
 }
 @media(prefers-reduced-motion:reduce){.menu-photo img,.review-layout{transition:none}}
+
+/* Reservation calendar — controlled and visually consistent instead of the OS datetime spinner */
+.reserve{grid-template-columns:minmax(0,.97fr) minmax(0,1.03fr)}
+.reserve-content{padding:clamp(64px,6vw,92px) clamp(26px,5.2vw,82px);gap:15px}
+.reserve-content .section-heading{font-size:clamp(55px,5vw,85px)}
+.reserve-intro{line-height:1.65;max-width:490px}
+.reserve form{margin-top:8px;gap:15px}
+.reserve input[type="hidden"]{display:none}
+.reserve .reservation-honeypot{position:absolute!important;left:-9999px!important;opacity:0!important;pointer-events:none!important;height:0!important;width:0!important}
+.reserve textarea{width:100%;padding:13px;border:1px solid rgba(242,214,182,.27);background:rgba(255,255,255,.035);color:var(--cream);font:14px/1.5 var(--sans);min-height:72px;resize:vertical;border-radius:0;outline:none}
+.reserve textarea:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.reserve textarea::placeholder,.reserve input::placeholder{color:#9f8e7b}
+.reservation-schedule{grid-column:1/-1;display:grid;grid-template-columns:1.1fr .9fr;gap:15px;align-items:start;position:relative}
+.reservation-schedule .field-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#dbbd98;margin-bottom:9px;display:block}
+.calendar-field{position:relative;min-width:0}
+.reserve form .calendar-trigger{width:100%;background:rgba(255,255,255,.035);color:#cbbba9;min-height:49px;border:1px solid rgba(242,214,182,.27);margin:0;padding:13px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;font-size:13px;font-family:var(--sans);letter-spacing:0;grid-column:auto}
+.reserve form .calendar-trigger.is-chosen{color:#f4e8d7}
+.reserve form .calendar-trigger:hover,.reserve form .calendar-trigger:focus-visible{border-color:#d5b37e;outline:none}
+.reserve form .calendar-trigger svg{flex-shrink:0;color:#d8bc94}
+.reserve .time-field{grid-column:auto;min-width:0}
+.reserve .time-field input{font-size:13px;letter-spacing:0;padding:13px 10px}
+.calendar-popover{position:absolute;top:calc(100% + 8px);left:0;z-index:80;width:min(345px,calc(100vw - 38px));background:#241b18;border:1px solid rgba(222,183,131,.52);padding:17px;box-shadow:0 24px 60px rgba(0,0,0,.56);color:#efe0cc}
+.calendar-popover[hidden]{display:none}
+.calendar-toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:16px}
+.calendar-toolbar strong{font:400 23px/1.1 var(--serif);color:#f6e7d3;letter-spacing:0}
+.reserve form .calendar-toolbar button{width:34px;min-height:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(211,174,131,.28);background:none;color:#f2dfc6;font:400 22px var(--serif);margin:0;padding:0;grid-column:auto}
+.reserve form .calendar-toolbar button:disabled{opacity:.23;cursor:not-allowed}
+.calendar-weekdays,.calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;text-align:center}
+.calendar-weekdays{margin-bottom:7px}
+.calendar-weekdays span{font-size:9px;letter-spacing:.09em;color:#b69a7c;padding:5px 0}
+.reserve form .calendar-day{width:100%;min-width:0;min-height:36px;margin:0;padding:0;display:grid;place-items:center;border:0;background:transparent;color:#f4e6d1;font:500 12px var(--sans);grid-column:auto;transition:background .15s}
+.reserve form .calendar-day:hover:not(:disabled),.reserve form .calendar-day:focus-visible{background:#62402f;outline:1px solid #c39765}
+.reserve form .calendar-day[aria-pressed=true]{background:#d7b17d!important;color:#231712}
+.reserve form .calendar-day.is-today{box-shadow:inset 0 0 0 1px #aa8160}
+.reserve form .calendar-day:disabled{opacity:.2;cursor:not-allowed}
+.calendar-foot{display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid rgba(224,195,157,.18);gap:10px;color:#a99276;font-size:10px;letter-spacing:.04em}
+.reserve form #calendar-today{min-height:auto;height:auto;width:auto;grid-column:auto;border:0;background:none;color:#e6ba82;padding:4px 0;margin:0;letter-spacing:.06em;font-size:10px}
+.reserve-foot a{color:#e4bc85;text-underline-offset:3px}
+.reserve-status{font-size:12px;line-height:1.65;margin-top:3px}
+.reserve form #reserve-submit{transition:background .2s,opacity .2s}
+.reserve form #reserve-submit:disabled{opacity:.5;cursor:wait}
+@media(max-width:950px){.reserve{grid-template-columns:1fr}.reserve-image{height:380px}.reserve-content{padding:58px clamp(24px,7vw,70px) 80px}}
+@media(max-width:600px){.reserve form{gap:13px}.reservation-schedule{grid-template-columns:1fr 1fr;gap:10px}.calendar-popover{left:0;top:calc(100% + 8px)}.reserve-content{padding:55px 21px 75px}.reserve-content .section-heading{font-size:clamp(55px,11vw,72px)}}
+@media(max-width:380px){.reservation-schedule{grid-template-columns:1fr}.calendar-popover{width:min(335px,calc(100vw - 42px))}}
+
+
+@media(min-width:601px){.calendar-popover.open-above{top:auto;bottom:calc(100% + 9px)}}
+@media(max-width:600px){.calendar-popover{position:fixed;top:auto;bottom:15px;left:15px!important;right:15px!important;width:auto;max-height:calc(100dvh - 100px);overflow-y:auto;z-index:150;box-shadow:0 0 0 200vmax rgba(8,6,5,.6),0 18px 55px rgba(0,0,0,.55)}}
 </style>
 </head>
 <body>
@@ -332,7 +380,38 @@
 </div><div class="favorites-footer"><p>Representative food photography · Example menu prices</p><a href="#menu">Explore the full menu ↗</a><button class="favorites-cart-link" id="favorites-open-cart" type="button">View your bag ↗</button></div></div></section>
 
 <section class="reviews" id="reviews" aria-labelledby="review-heading"><div class="section-shell"><p class="kicker reveal">Around the table</p><div class="reviews-top reveal"><h2 class="section-heading serif" id="review-heading">Stories worth<br><em>sharing.</em></h2><p class="reviews-lead">Six sample stories. Browse the collection.</p></div><div class="review-layout"><div class="review-image"><img id="review-photo" src="https://images.pexels.com/photos/6314651/pexels-photo-6314651.jpeg?auto=compress&cs=tinysrgb&w=850" alt="Illustrative portrait for a sample guest story" loading="lazy"></div><div class="review-copy"><blockquote id="review-quote">The dumplings were the first thing to disappear. We ordered another basket before the mains even arrived.</blockquote><div class="review-person"><strong id="review-name">Mei · Sample guest story</strong><span id="review-count">01 / 06</span></div></div></div><div class="reviews-bottom"><p>EXPLORE MORE STORIES <span id="review-count-bottom">01 / 06</span></p><div class="review-controls"><button id="prev-review" type="button" aria-label="Previous sample review" title="Previous story">←</button><button id="next-review" type="button" aria-label="Next sample review" title="Next story">→</button></div></div><p class="reviews-note">These are sample testimonials with illustrative portraits for a portfolio concept, not real customer reviews. Replace with permission-based guest stories before commercial launch.</p></div></section>
-<section class="reserve" id="reserve" aria-labelledby="reserve-heading"><div class="reserve-image"><img src="https://images.unsplash.com/photo-1759893497816-129ce94f1b40?auto=format&fit=crop&w=1200&q=83" alt="Lantern-lit restaurant entrance" loading="lazy"><div class="reserve-quote">The table is better <em>with you at it.</em></div></div><div class="reserve-content"><p class="kicker">Come on in</p><h2 class="section-heading serif" id="reserve-heading">Find your<br><em>place.</em></h2><p class="reserve-intro">A table worth gathering around. Choose your preferred time to preview the reservation experience. Reservations are not available through this website.</p><form id="reserve-form"><label>YOUR NAME<input name="guest" type="text" autocomplete="name" placeholder="Name" maxlength="80" required></label><label>NUMBER OF GUESTS<select name="party" required><option value="2">2 guests</option><option value="1">1 guest</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7+ guests</option></select></label><label class="full">PREFERRED DATE & TIME<input id="reservation-date" type="datetime-local" name="date" required></label><button type="submit" class="button-primary">Reserve my table <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16 16 4M5 4h11v11"/></svg></button><p id="reservation-status" class="reserve-status" role="status" aria-live="polite"></p></form><p class="reserve-foot">Restaurant phone, address and booking email have not been provided. Add verified business details and connect the reservation inbox or booking platform before accepting live reservations.</p></div></section>
+<section class="reserve" id="reserve" aria-labelledby="reserve-heading">
+ <div class="reserve-image"><img src="https://images.unsplash.com/photo-1759893497816-129ce94f1b40?auto=format&fit=crop&w=1200&q=83" alt="Lantern-lit restaurant entrance" loading="lazy"><div class="reserve-quote">The table is better <em>with you at it.</em></div></div>
+ <div class="reserve-content">
+  <p class="kicker">Come on in</p><h2 class="section-heading serif" id="reserve-heading">Find your<br><em>place.</em></h2>
+  <p class="reserve-intro">The best evenings begin around a table. Send your preferred date and time and we'll follow up by email to discuss availability.</p>
+  <form id="reserve-form" method="post" action="https://formsubmit.co/ajax/sierra@recoverrevenue.company">
+   <input name="_subject" type="hidden" value="Wok Hei · New table enquiry">
+   <input name="_url" type="hidden" value="https://wok-kai-food.vercel.app/#reserve">
+   <input name="_captcha" type="hidden" value="false">
+   <input name="_template" type="hidden" value="table">
+   <input name="_honey" type="text" autocomplete="off" tabindex="-1" class="reservation-honeypot" aria-hidden="true">
+   <label>YOUR NAME<input name="name" type="text" autocomplete="name" placeholder="Your name" maxlength="80" required></label>
+   <label>NUMBER OF GUESTS<select name="party_size" required><option value="2 guests">2 guests</option><option value="1 guest">1 guest</option><option value="3 guests">3 guests</option><option value="4 guests">4 guests</option><option value="5 guests">5 guests</option><option value="6 guests">6 guests</option><option value="7 or more guests">7+ guests</option></select></label>
+   <label class="full">YOUR EMAIL<input name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="150" required></label>
+   <div class="reservation-schedule">
+     <div class="calendar-field"><span class="field-label">PREFERRED DATE</span><input id="reservation-date" type="hidden" name="preferred_date"><button type="button" id="calendar-trigger" class="calendar-trigger" aria-haspopup="dialog" aria-controls="reservation-calendar" aria-expanded="false"><span id="calendar-display">Select a date</span><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M7 3v4M17 3v4M3 10h18"/></svg></button>
+       <div class="calendar-popover" id="reservation-calendar" role="dialog" aria-label="Choose preferred reservation date" hidden>
+        <div class="calendar-toolbar"><button type="button" id="calendar-prev" aria-label="Previous month">‹</button><strong id="calendar-month">October 2026</strong><button type="button" id="calendar-next" aria-label="Next month">›</button></div>
+        <div class="calendar-weekdays" aria-hidden="true"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div>
+        <div id="calendar-days" class="calendar-days" role="grid" aria-label="Calendar dates"></div>
+        <div class="calendar-foot"><span>Choose a preferred date</span><button type="button" id="calendar-today">Today</button></div>
+       </div>
+     </div>
+     <label class="time-field">PREFERRED TIME<input id="reservation-time" type="time" name="preferred_time" required aria-label="Preferred time"></label>
+   </div>
+   <label class="full">SPECIAL REQUESTS (OPTIONAL)<textarea name="special_requests" rows="2" maxlength="500" placeholder="Anything we should know?"></textarea></label>
+   <button id="reserve-submit" type="submit" class="button-primary">Send table enquiry <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16 16 4M5 4h11v11"/></svg></button>
+   <p id="reservation-status" class="reserve-status" role="status" aria-live="polite"></p>
+  </form>
+  <p class="reserve-foot">Enquiries go to <a href="mailto:sierra@recoverrevenue.company">sierra@recoverrevenue.company</a>. A request is not a confirmed reservation. Please await a reply before making plans.</p>
+ </div>
+</section>
 </main>
 <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-title"><div class="order-panel">
 <header class="order-header"><div><p class="kicker">WOK HEI / ONLINE ORDERING</p><h2 class="serif" id="order-title">Your <em>bag.</em></h2></div><button id="close-cart" class="order-close" type="button" aria-label="Close order bag">×</button></header>
@@ -431,11 +510,79 @@ $('#next-review').addEventListener('click',()=>showReview(ri+1));
 showReview(0);
 
 const toggle=$('#mobile-toggle'),mobile=$('#mobile-menu');function closeMenu(){mobile.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation')}toggle.addEventListener('click',()=>{const open=mobile.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation')});mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
-const date=$('#reservation-date');const now=new Date(),local=new Date(now.getTime()-now.getTimezoneOffset()*60000);date.min=local.toISOString().slice(0,16);
-const RESERVATION_EMAIL='';// Configure with a real restaurant email only after approval.
-$('#reserve-form').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;const data=new FormData(form),guest=String(data.get('guest')).trim(),party=data.get('party'),time=data.get('date'),msg=$('#reservation-status');if(!guest){msg.textContent='Please enter a name.';return}
- if(!RESERVATION_EMAIL){msg.textContent='This is a portfolio preview. No table has been reserved and no personal information was sent. Connect the restaurant booking system to enable enquiries.';return}
- const subject=encodeURIComponent('Table enquiry — Wok Hei');const body=encodeURIComponent('Name: '+guest+'\nGuests: '+party+'\nPreferred time: '+time+'\n\nPlease confirm availability.');location.href='mailto:'+RESERVATION_EMAIL+'?subject='+subject+'&body='+body;msg.textContent='Your email app will open with an enquiry draft. This is not a confirmed reservation.'});
+// Custom calendar keeps date selection legible and separate from the time control.
+const reservationForm=$('#reserve-form'),dateInput=$('#reservation-date'),timeInput=$('#reservation-time');
+const calendarPopup=$('#reservation-calendar'),calendarTrigger=$('#calendar-trigger'),calendarDays=$('#calendar-days'),calendarLabel=$('#calendar-month'),calendarDisplay=$('#calendar-display');
+const currentDay=new Date();currentDay.setHours(0,0,0,0);
+const finalMonth=new Date(currentDay.getFullYear(),currentDay.getMonth()+12,1);
+let viewYear=currentDay.getFullYear(),viewMonth=currentDay.getMonth();
+const monthFormatter=new Intl.DateTimeFormat('en',{month:'long',year:'numeric'});
+const dayFormatter=new Intl.DateTimeFormat('en',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+const padded=n=>String(n).padStart(2,'0');
+function isoLocalDate(d){return d.getFullYear()+'-'+padded(d.getMonth()+1)+'-'+padded(d.getDate())}
+function fromLocalDate(iso){if(!/^\d{4}-\d{2}-\d{2}$/.test(iso))return null;const [y,m,d]=iso.split('-').map(Number);const val=new Date(y,m-1,d);return val.getFullYear()===y&&val.getMonth()===m-1&&val.getDate()===d?val:null}
+function dateIsValid(d){const fresh=new Date();fresh.setHours(0,0,0,0);return d&&d>=fresh&&d<finalMonth}
+function showCalendar(open){calendarPopup.hidden=!open;calendarTrigger.setAttribute('aria-expanded',String(open));if(open){drawCalendar();const rect=calendarTrigger.getBoundingClientRect();const below=innerHeight-rect.bottom;calendarPopup.classList.toggle('open-above',innerWidth>600&&below<370&&rect.top>405);const focused=calendarDays.querySelector('[aria-pressed="true"]')||calendarDays.querySelector('button:not(:disabled)');if(focused)focused.focus()}else{calendarPopup.classList.remove('open-above')}}
+function drawCalendar(){
+ const monthStart=new Date(viewYear,viewMonth,1),daysInMonth=new Date(viewYear,viewMonth+1,0).getDate();
+ calendarLabel.textContent=monthFormatter.format(monthStart);
+ $('#calendar-prev').disabled=monthStart<=new Date(currentDay.getFullYear(),currentDay.getMonth(),1);
+ $('#calendar-next').disabled=new Date(viewYear,viewMonth+1,1)>=finalMonth;
+ calendarDays.replaceChildren();
+ const lead=(monthStart.getDay()+6)%7;
+ for(let i=0;i<lead;i++){const cell=document.createElement('span');cell.className='calendar-space';cell.setAttribute('aria-hidden','true');calendarDays.append(cell)}
+ for(let day=1;day<=daysInMonth;day++){
+  const d=new Date(viewYear,viewMonth,day),button=document.createElement('button');button.type='button';button.className='calendar-day';button.textContent=String(day);button.dataset.date=isoLocalDate(d);button.setAttribute('aria-label',dayFormatter.format(d));
+  button.setAttribute('aria-pressed',String(dateInput.value===button.dataset.date));button.disabled=!dateIsValid(d);
+  if(button.dataset.date===isoLocalDate(new Date()))button.classList.add('is-today');
+  button.addEventListener('click',()=>selectDate(d));
+  calendarDays.append(button);
+ }
+}
+function selectDate(d){if(!dateIsValid(d))return;dateInput.value=isoLocalDate(d);calendarDisplay.textContent=dayFormatter.format(d);calendarTrigger.classList.add('is-chosen');showCalendar(false);calendarTrigger.focus();$('#reservation-status').textContent=''}
+calendarTrigger.addEventListener('click',()=>showCalendar(calendarPopup.hidden));
+$('#calendar-prev').addEventListener('click',()=>{const m=new Date(viewYear,viewMonth-1,1);viewYear=m.getFullYear();viewMonth=m.getMonth();drawCalendar()});
+$('#calendar-next').addEventListener('click',()=>{const m=new Date(viewYear,viewMonth+1,1);if(m>=finalMonth)return;viewYear=m.getFullYear();viewMonth=m.getMonth();drawCalendar()});
+$('#calendar-today').addEventListener('click',()=>{const today=new Date();viewYear=today.getFullYear();viewMonth=today.getMonth();selectDate(today)});
+document.addEventListener('pointerdown',e=>{if(!calendarPopup.hidden&&!e.target.closest('.calendar-field'))showCalendar(false)});
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape'&&!calendarPopup.hidden){showCalendar(false);calendarTrigger.focus()}
+ if(!calendarPopup.hidden&&e.target.matches('.calendar-day')&&['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)){
+   e.preventDefault();const offset={ArrowLeft:-1,ArrowRight:1,ArrowUp:-7,ArrowDown:7}[e.key];const active=new Date(viewYear,viewMonth,Number(e.target.textContent)+offset);
+   if(active.getMonth()!==viewMonth){const m=new Date(active.getFullYear(),active.getMonth(),1);if(m<new Date(currentDay.getFullYear(),currentDay.getMonth(),1)||m>=finalMonth)return;viewYear=m.getFullYear();viewMonth=m.getMonth();drawCalendar()}
+   const target=calendarDays.querySelector('[data-date="'+isoLocalDate(active)+'"]');if(target&&!target.disabled)target.focus();
+ }
+});
+reservationForm.addEventListener('submit',async e=>{
+ e.preventDefault();
+ const status=$('#reservation-status'),submit=$('#reserve-submit');status.textContent='';
+ if(!reservationForm.reportValidity())return;
+ const selected=fromLocalDate(dateInput.value);
+ if(!dateIsValid(selected)){status.textContent='Please select a date on the calendar.';calendarTrigger.focus();return}
+ if(!timeInput.value){status.textContent='Please select a preferred time.';timeInput.focus();return}
+ const [h,m]=timeInput.value.split(':').map(Number),chosen=new Date(selected.getFullYear(),selected.getMonth(),selected.getDate(),h,m);
+ if(chosen<=new Date()){status.textContent='Choose a future date and time.';calendarTrigger.focus();return}
+ const formData=new FormData(reservationForm);
+ const payload=Object.fromEntries(formData.entries());
+ payload.name=String(payload.name||'').trim();payload.email=String(payload.email||'').trim();
+ payload.message='New table enquiry for Wok Hei. Please reply to the guest to confirm availability. This request does not hold a table.';
+ if(!payload.name||!payload.email){status.textContent='Please add your name and email.';return}
+ submit.disabled=true;submit.setAttribute('aria-busy','true');status.textContent='Sending your enquiry…';
+ try {
+  const response=await fetch('https://formsubmit.co/ajax/sierra@recoverrevenue.company',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
+  const data=await response.json();
+  const successful=response.ok&&(data.success===true||data.success==='true');
+  if(successful){
+   status.textContent='Enquiry sent! Please check your email for a personal reply. Your table is not yet confirmed.';
+   reservationForm.reset();dateInput.value='';calendarDisplay.textContent='Select a date';calendarTrigger.classList.remove('is-chosen');
+  }else{
+   const pending=/activat|confirm/i.test(String(data.message||''));
+   status.textContent=pending?'The enquiry inbox is being activated. Please send your request directly to sierra@recoverrevenue.company for now.':'Your enquiry could not be delivered. Please email sierra@recoverrevenue.company directly.';
+  }
+ } catch(error){
+  status.textContent='Connection problem. Your enquiry was not sent. Please email sierra@recoverrevenue.company directly.';
+ } finally {submit.disabled=false;submit.removeAttribute('aria-busy')}
+});
 
 // Non-transactional cart preview: no inventory, payment, or order submission.
 const productCatalog=new Map(Object.values(menu).flat().map(([name,desc,price])=>[name,price]));
