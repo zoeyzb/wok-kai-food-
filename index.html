@@ -341,6 +341,23 @@
 .review-initial{font:italic 110px/1 var(--serif);color:#ead2af}
 .review-table-label{font-size:8px;font-weight:600;letter-spacing:.22em;text-align:center}
 @media(max-width:760px){.review-image{height:210px;min-height:210px;gap:12px;padding:25px}.review-initial{font-size:75px}.review-mark{padding-bottom:9px;font-size:12px}.favorite-photo{aspect-ratio:4/5}}
+
+/* 2026 editorial refresh: sharp table photo, real portraits and fluid slogan. */
+.scene[data-scene="3"] .scene-media img{object-position:center 48%;filter:saturate(.92) brightness(.83) contrast(1.06)}
+.scene[data-scene="3"] .scene-media:after{background:linear-gradient(270deg,rgba(12,9,9,.86) 0%,rgba(12,9,9,.31) 57%,rgba(12,9,9,.07) 100%),linear-gradient(0deg,rgba(13,8,8,.4),transparent 59%)}
+.marquee{display:block;justify-content:initial;gap:0;padding:35px 0;overflow:hidden;white-space:nowrap}
+.marquee-track{display:flex;align-items:center;width:max-content;animation:wokhei-marquee 26s linear infinite;will-change:transform}
+.marquee-group{display:flex;align-items:center;flex:none;gap:38px;padding-right:38px}
+.marquee span{display:block;flex:none}
+@keyframes wokhei-marquee{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.review-image{position:relative;padding:0;display:block;background:#33231b;min-height:390px;overflow:hidden}
+.review-image:before{display:none}
+.review-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 34%;filter:saturate(.91) contrast(1.03) brightness(.96);opacity:1;transition:opacity .3s ease}
+.review-image img.is-loading{opacity:0}
+.review-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,9,7,.62),transparent 34%);pointer-events:none}
+.review-photo-label{position:absolute;z-index:1;bottom:20px;left:20px;color:#f5e5d0;font:700 9px/1.4 var(--sans);letter-spacing:.19em;text-shadow:0 1px 9px #241914}
+@media(max-width:760px){.review-image{height:240px;min-height:240px}.review-photo-label{left:14px;bottom:14px;font-size:8px}.marquee{padding:29px 0}.marquee span{font-size:34px}.marquee-group{gap:27px;padding-right:27px}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none;will-change:auto}.review-image img{transition:none}}
 </style>
 </head>
 <body>
@@ -384,11 +401,11 @@
   <article class="scene is-active" data-scene="0" aria-label="Chapter one, welcome" aria-hidden="false"><div class="scene-media"><img src="https://images.pexels.com/photos/15359781/pexels-photo-15359781.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Traditional Chinese lanterns at a warmly lit restaurant entrance" loading="lazy"></div><div class="scene-copy"><div class="scene-copy-inner"><p class="kicker">Chapter 01 / The arrival</p><h2 class="scene-title">Follow the <em>lanterns.</em></h2><ul class="scene-notes"><li>Lanterns light the way.</li><li>A warm welcome at the door.</li><li>Dinner is just inside.</li></ul><div class="scene-features"><span>The arrival</span><span>Lantern light</span><span>Come on in</span></div></div></div></article>
   <article class="scene" data-scene="1" aria-label="Chapter two, the dining room" aria-hidden="true"><div class="scene-media"><img src="https://images.unsplash.com/photo-1759892984793-072f8ecac014?auto=format&fit=crop&w=1800&q=84" alt="Chinese restaurant dining room with laid tables, dark wood and red lanterns" loading="lazy"></div><div class="scene-copy"><div class="scene-copy-inner"><p class="kicker">Chapter 02 / The dining room</p><h2 class="scene-title">Pull up <em>a seat.</em></h2><ul class="scene-notes"><li>Lanterns overhead.</li><li>Your table is waiting.</li><li>Stay for another story.</li></ul><div class="scene-features"><span>Tables for gathering</span><span>Lantern-lit dining</span><span>Stay a while</span></div></div></div></article>
   <article class="scene" data-scene="2" aria-label="Chapter three, the kitchen" aria-hidden="true"><div class="scene-media"><img src="https://images.pexels.com/photos/4543004/pexels-photo-4543004.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="A cook tending a wok over a gas flame in a working kitchen" loading="lazy"></div><div class="scene-copy"><div class="scene-copy-inner"><p class="kicker">Chapter 03 / The live kitchen</p><h2 class="scene-title">The art of <em>the wok.</em></h2><ul class="scene-notes"><li>Noodles meet high heat.</li><li>Tossed straight from the wok.</li><li>The fragrance of wok hei.</li></ul><div class="scene-features"><span>High-heat cooking</span><span>Wok-tossed noodles</span><span>The final flourish</span></div></div></div></article>
-  <article class="scene" data-scene="3" aria-label="Chapter four, dinner" aria-hidden="true"><div class="scene-media"><img src="https://images.pexels.com/photos/7364009/pexels-photo-7364009.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="A laid dining table with tea and shared plates beneath red lanterns" loading="lazy"></div><div class="scene-copy"><div class="scene-copy-inner"><p class="kicker">Chapter 04 / At your table</p><h2 class="scene-title">Pass it <em>around.</em></h2><ul class="scene-notes"><li>Something for everyone.</li><li>Pass a plate, try another.</li><li>One more bite together.</li></ul><div class="scene-features"><span>Dim sum to share</span><span>Something for everyone</span><span>One more plate</span></div></div></div></article>
+  <article class="scene" data-scene="3" aria-label="Chapter four, dinner" aria-hidden="true"><div class="scene-media"><img src="https://images.pexels.com/photos/8921578/pexels-photo-8921578.jpeg?auto=compress&cs=tinysrgb&w=2600&q=90" alt="Friends sharing dishes and conversation around a warmly lit restaurant table" loading="lazy" decoding="async"></div><div class="scene-copy"><div class="scene-copy-inner"><p class="kicker">Chapter 04 / At your table</p><h2 class="scene-title">Pass it <em>around.</em></h2><ul class="scene-notes"><li>Something for everyone.</li><li>Pass a plate, try another.</li><li>One more bite together.</li></ul><div class="scene-features"><span>Dim sum to share</span><span>Something for everyone</span><span>One more plate</span></div></div></div></article>
   <div class="stage-caption" aria-hidden="true">Scroll through the experience</div><div class="stage-ui" aria-hidden="true"><div class="stage-count"><b id="scene-number" style="font-weight:400">01</b> <span>/ 04</span></div><div class="stage-steps" id="stage-steps"><i class="is-active"></i><i></i><i></i><i></i></div><span class="stage-label" id="stage-label">The arrival</span></div>
 </div>
 </section>
-<div class="marquee" aria-hidden="true"><span>Good food, good company</span><i>✶</i><span>Good food, good company</span><i>✶</i><span>Good food, good company</span><i>✶</i></div>
+<div class="marquee" aria-label="Good food, good company"><div class="marquee-track" aria-hidden="true"><div class="marquee-group"><span>Good food, good company</span><i>✶</i><span>Good food, good company</span><i>✶</i><span>Good food, good company</span><i>✶</i></div><div class="marquee-group"><span>Good food, good company</span><i>✶</i><span>Good food, good company</span><i>✶</i><span>Good food, good company</span><i>✶</i></div></div></div>
 <section class="menu" id="menu" aria-labelledby="menu-heading"><div class="section-shell"><p class="kicker reveal">The good stuff</p><div class="menu-top reveal"><h2 class="section-heading serif" id="menu-heading">A menu made<br>to <em>share.</em></h2><p class="section-lead">Beautifully simple ingredients. Familiar favourites. A few unexpected sparks.</p></div><div class="menu-tabs" role="tablist" aria-label="Menu categories" id="menu-tabs"><button class="menu-tab" role="tab" aria-selected="true" data-menu="Small plates">Small plates</button><button class="menu-tab" role="tab" aria-selected="false" data-menu="Noodles & rice">Noodles & rice</button><button class="menu-tab" role="tab" aria-selected="false" data-menu="From the wok">From the wok</button><button class="menu-tab" role="tab" aria-selected="false" data-menu="Tea & sweets">Tea & sweets</button></div><div class="menu-content"><div class="menu-items" id="menu-items" role="tabpanel" aria-live="polite"><div class="menu-item"><div><h3 class="menu-item-title">Soup dumplings</h3><p class="menu-item-desc">Pork, ginger, warming broth</p></div><span class="menu-item-price">$13</span></div><div class="menu-item"><div><h3 class="menu-item-title">Crispy scallion pancake</h3><p class="menu-item-desc">Flaky, golden, sesame dipping sauce</p></div><span class="menu-item-price">$8</span></div><div class="menu-item"><div><h3 class="menu-item-title">Smashed cucumber</h3><p class="menu-item-desc">Garlic, chilli oil, black vinegar</p></div><span class="menu-item-price">$6</span></div><div class="menu-item"><div><h3 class="menu-item-title">Pork & chive dumplings</h3><p class="menu-item-desc">Pan-fried, black vinegar</p></div><span class="menu-item-price">$9</span></div></div><figure class="menu-photo"><img id="menu-photo" src="https://images.pexels.com/photos/16845585/pexels-photo-16845585.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Illustrative photograph for Soup dumplings" loading="lazy"><figcaption><span>FROM THIS SECTION</span><strong id="menu-photo-title">Soup dumplings</strong><small id="menu-photo-subtitle">Pork, ginger, warming broth</small><small class="menu-photo-footnote">Representative food photography</small></figcaption></figure></div><p class="menu-footnote">Menu items and prices are examples for this design concept and can be updated for the restaurant.</p></div></section>
 <section class="gallery" id="gallery" aria-labelledby="gallery-heading"><div class="section-shell">
 <p class="kicker reveal">Fresh from the kitchen</p><div class="gallery-top reveal"><h2 class="section-heading serif" id="gallery-heading">Our <em>favourites.</em><span class="gallery-subtitle">A feast for the senses.</span></h2><div class="gallery-aside"><span class="favorites-label">FOUR HOUSE FAVOURITES</span><p class="gallery-lead">A small taste of the menu. Add a favourite, or discover the rest.</p></div></div>
@@ -399,7 +416,7 @@
 <article class="favorite-card reveal"><div class="favorite-photo"><img src="https://images.pexels.com/photos/5409022/pexels-photo-5409022.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Glazed chicken on a black plate over a stone table" loading="lazy"><span>04 / FROM THE WOK</span></div><div class="favorite-info"><div><h3>Kung pao chicken</h3><p>$19 · Sample price</p></div><button class="favorite-add" type="button" data-add="Kung pao chicken" data-price="19" aria-label="Add kung pao chicken to bag">ADD <b>+</b></button></div></article>
 </div><div class="favorites-footer"><p>Representative food photography · Example menu prices</p><a href="#menu">Explore the full menu ↗</a><button class="favorites-cart-link" id="favorites-open-cart" type="button">View your bag ↗</button></div></div></section>
 
-<section class="reviews" id="reviews" aria-labelledby="review-heading"><div class="section-shell"><p class="kicker reveal">Around the table</p><div class="reviews-top reveal"><h2 class="section-heading serif" id="review-heading">Stories worth<br><em>sharing.</em></h2><p class="reviews-lead">Six sample stories. Browse the collection.</p></div><div class="review-layout"><div class="review-image" aria-hidden="true"><span class="review-mark">鑊氣</span><span class="review-initial" id="review-initial">M</span><span class="review-table-label">AROUND THE TABLE</span></div><div class="review-copy"><blockquote id="review-quote">The dumplings were the first thing to disappear. We ordered another basket before the mains even arrived.</blockquote><div class="review-person"><strong id="review-name">Mei · Sample guest story</strong><span id="review-count">01 / 06</span></div></div></div><div class="reviews-bottom"><p>EXPLORE MORE STORIES <span id="review-count-bottom">01 / 06</span></p><div class="review-controls"><button id="prev-review" type="button" aria-label="Previous sample review" title="Previous story">←</button><button id="next-review" type="button" aria-label="Next sample review" title="Next story">→</button></div></div><p class="reviews-note">These are sample testimonials for a portfolio concept, not real customer reviews. Replace with permission-based guest stories before commercial launch.</p></div></section>
+<section class="reviews" id="reviews" aria-labelledby="review-heading"><div class="section-shell"><p class="kicker reveal">Around the table</p><div class="reviews-top reveal"><h2 class="section-heading serif" id="review-heading">Stories worth<br><em>sharing.</em></h2><p class="reviews-lead">Six sample stories. Browse the collection.</p></div><div class="review-layout"><div class="review-image" aria-hidden="true"><img id="review-photo" src="https://images.pexels.com/photos/6314651/pexels-photo-6314651.jpeg?auto=compress&cs=tinysrgb&w=900&q=85" alt="" loading="lazy" decoding="async"><span class="review-photo-label">EDITORIAL PHOTOGRAPHY</span></div><div class="review-copy"><blockquote id="review-quote">The dumplings were the first thing to disappear. We ordered another basket before the mains even arrived.</blockquote><div class="review-person"><strong id="review-name">Mei · Sample guest story</strong><span id="review-count">01 / 06</span></div></div></div><div class="reviews-bottom"><p>EXPLORE MORE STORIES <span id="review-count-bottom">01 / 06</span></p><div class="review-controls"><button id="prev-review" type="button" aria-label="Previous sample review" title="Previous story">←</button><button id="next-review" type="button" aria-label="Next sample review" title="Next story">→</button></div></div><p class="reviews-note">These are fictional sample stories for a portfolio concept. The editorial photographs show real people but do not depict or identify the story authors. Replace with consented customer reviews and portraits before commercial launch.</p></div></section>
 <section class="reserve" id="reserve" aria-labelledby="reserve-heading">
  <div class="reserve-image"><img src="https://images.unsplash.com/photo-1759893497816-129ce94f1b40?auto=format&fit=crop&w=1200&q=83" alt="Lantern-lit restaurant entrance" loading="lazy"><div class="reserve-quote">The table is better <em>with you at it.</em></div></div>
  <div class="reserve-content">
@@ -496,21 +513,57 @@ function renderMenu(key){
 tabs.forEach(t=>t.addEventListener('click',()=>renderMenu(t.dataset.menu)));renderMenu('Small plates');
 
 const reviews=[
-{name:'Mei · Sample guest story',quote:'The first basket of dumplings disappeared before anything else arrived. There is always room for one more.'},
-{name:'Daniel · Sample guest story',quote:'One of those evenings when the food keeps coming and nobody remembers to check the time.'},
-{name:'Priya · Sample guest story',quote:'A warm table, bowls to share and noodles worth ordering twice. Exactly the sort of night I love.'},
-{name:'Arthur · Sample guest story',quote:'I came for a quiet dinner and stayed for the conversation. The tea and dumplings made it a lovely evening.'},
-{name:'Sofia · Sample guest story',quote:'Everyone chose a different plate and we shared the lot. That is my kind of dinner.'},
-{name:'Lin · Sample guest story',quote:'A little chilli, a lot of laughter, and one last cup of jasmine tea before heading home.'}
+ {
+  "name": "Mei · Sample guest story",
+  "quote": "The first basket of dumplings disappeared before anything else arrived. There is always room for one more.",
+  "photo": "https://images.pexels.com/photos/6314651/pexels-photo-6314651.jpeg?auto=compress&cs=tinysrgb&w=900&q=85",
+  "position": "center 34%"
+ },
+ {
+  "name": "Daniel · Sample guest story",
+  "quote": "One of those evenings when the food keeps coming and nobody remembers to check the time.",
+  "photo": "https://images.pexels.com/photos/15704713/pexels-photo-15704713.jpeg?auto=compress&cs=tinysrgb&w=900&q=85",
+  "position": "center 28%"
+ },
+ {
+  "name": "Priya · Sample guest story",
+  "quote": "A warm table, bowls to share and noodles worth ordering twice. Exactly the sort of night I love.",
+  "photo": "https://images.pexels.com/photos/19255805/pexels-photo-19255805.jpeg?auto=compress&cs=tinysrgb&w=900&q=85",
+  "position": "center 35%"
+ },
+ {
+  "name": "Arthur · Sample guest story",
+  "quote": "I came for a quiet dinner and stayed for the conversation. The tea and dumplings made it a lovely evening.",
+  "photo": "https://images.pexels.com/photos/30684468/pexels-photo-30684468.jpeg?auto=compress&cs=tinysrgb&w=900&q=85",
+  "position": "center 34%"
+ },
+ {
+  "name": "Sofia · Sample guest story",
+  "quote": "Everyone chose a different plate and we shared the lot. That is my kind of dinner.",
+  "photo": "https://images.pexels.com/photos/13989712/pexels-photo-13989712.jpeg?auto=compress&cs=tinysrgb&w=900&q=85",
+  "position": "center 34%"
+ },
+ {
+  "name": "Lin · Sample guest story",
+  "quote": "A little chilli, a lot of laughter, and one last cup of jasmine tea before heading home.",
+  "photo": "https://images.pexels.com/photos/21873700/pexels-photo-21873700.jpeg?auto=compress&cs=tinysrgb&w=900&q=85",
+  "position": "center 32%"
+ }
 ];let ri=0;
+const reviewPhoto=$('#review-photo');let reviewPhotoRequest=0;
 function showReview(next){
  ri=(next+reviews.length)%reviews.length;
- const r=reviews[ri];
- $('#review-initial').textContent=r.name.charAt(0);
+ const r=reviews[ri],requestId=++reviewPhotoRequest;
  $('#review-quote').textContent=r.quote;
  $('#review-name').textContent=r.name;
  const num=String(ri+1).padStart(2,'0')+' / '+String(reviews.length).padStart(2,'0');
  $('#review-count').textContent=num;$('#review-count-bottom').textContent=num;
+ if(reviewPhoto.getAttribute('src')===r.photo){reviewPhoto.style.objectPosition=r.position;reviewPhoto.classList.remove('is-loading');return}
+ reviewPhoto.classList.add('is-loading');
+ const incoming=new Image();
+ incoming.onload=()=>{if(requestId!==reviewPhotoRequest)return;reviewPhoto.style.objectPosition=r.position;reviewPhoto.src=r.photo;reviewPhoto.classList.remove('is-loading')};
+ incoming.onerror=()=>{if(requestId!==reviewPhotoRequest)return;reviewPhoto.removeAttribute('src');reviewPhoto.classList.remove('is-loading')};
+ incoming.src=r.photo;
 }
 $('#prev-review').addEventListener('click',()=>showReview(ri-1));
 $('#next-review').addEventListener('click',()=>showReview(ri+1));
